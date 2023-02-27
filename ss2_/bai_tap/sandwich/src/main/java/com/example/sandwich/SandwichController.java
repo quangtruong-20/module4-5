@@ -1,4 +1,4 @@
-package com.example.gia_vi;
+package com.example.sandwich;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

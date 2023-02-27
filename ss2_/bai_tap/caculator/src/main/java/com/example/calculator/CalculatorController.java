@@ -1,4 +1,4 @@
-package com.example.may_tinh;
+package com.example.calculator;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
