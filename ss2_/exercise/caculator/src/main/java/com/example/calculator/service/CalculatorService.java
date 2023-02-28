@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CalculatorService implements  ICalculatorService{
     @Override
-    public double performCaculation(String calculate, double firstNumber, double secondNumber) {
+    public double performCalculation(String calculate, double firstNumber, double secondNumber) {
         switch (calculate) {
             case "addition":
                 return firstNumber + secondNumber;

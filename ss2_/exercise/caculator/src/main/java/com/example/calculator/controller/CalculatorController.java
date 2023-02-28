@@ -20,14 +20,10 @@ public class CalculatorController {
     }
 
     @PostMapping("/form")
-    public String calculation(ModelMap model, @RequestParam double firstNumber , @RequestParam double secondNumber ,String calculate){
+    public String calculation(ModelMap model, @RequestParam double firstNumber , @RequestParam double secondNumber ,@RequestParam String calculate){
 
-        double result = calculatorService.performCaculation(calculate, firstNumber, secondNumber);
-
-        model.addAttribute("firstNumber",firstNumber);
-        model.addAttribute("secondNumber",secondNumber);
+        double result = calculatorService.performCalculation(calculate, firstNumber, secondNumber);
         model.addAttribute("result", result);
-
         return "list";
 
     }
