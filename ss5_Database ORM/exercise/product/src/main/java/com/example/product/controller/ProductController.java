@@ -14,7 +14,7 @@ public class ProductController {
     IProductService productService;
 
     @GetMapping("")
-    public String showList(@RequestParam(required = false) String freeText,Model model) {
+    public String showList(@RequestParam(required = false, defaultValue = "") String freeText,Model model) {
         model.addAttribute("productList", this.productService.getProduct(freeText));
         return "/list";
     }
@@ -24,7 +24,7 @@ public class ProductController {
         model.addAttribute("product", this.productService.getProductById(id));
         return "/detail";
     }
-
+//
     @GetMapping("creation-form")
     public String getCreationForm(Model model) {
         model.addAttribute("product", new Product());
@@ -36,28 +36,23 @@ public class ProductController {
         this.productService.create(product);
         return "redirect:/product";
     }
-
-    @GetMapping("/delete/{id}")
-    public String deleteProduct(@PathVariable int id) {
-        this.productService.delete(id);
-        return "redirect:/product";
-
-    }
-<<<<<<< HEAD
-    @GetMapping("/update/{id}")
-    public String getUpdateForm(@PathVariable int id,Model model){
-=======
-    @GetMapping("/update")
-    public String getUpdateForm(@RequestParam int id,Model model){
->>>>>>> origin/main
-        model.addAttribute("product",productService.getProductById(id));
-        return "/update";
-    }
-
-    @PostMapping("update")
-    public String getUpdate(@ModelAttribute Product product,Model model){
-        productService.update(product);
-        model.addAttribute("product", product);
-        return "redirect:/product";
-    }
+//
+//    @GetMapping("/delete/{id}")
+//    public String deleteProduct(@PathVariable int id) {
+//        this.productService.delete(id);
+//        return "redirect:/product";
+//
+//    }
+//    @GetMapping("/update/{id}")
+//    public String getUpdateForm(@PathVariable int id,Model model){
+//        model.addAttribute("product",productService.getProductById(id));
+//        return "/update";
+//    }
+//
+//    @PostMapping("update")
+//    public String getUpdate(@ModelAttribute Product product,Model model){
+//        productService.update(product);
+//        model.addAttribute("product", product);
+//        return "redirect:/product";
+//    }
 }

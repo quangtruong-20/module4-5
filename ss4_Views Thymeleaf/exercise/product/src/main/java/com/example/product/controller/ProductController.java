@@ -43,13 +43,8 @@ public class ProductController {
         return "redirect:/product";
 
     }
-<<<<<<< HEAD
     @GetMapping("/update/{id}")
     public String getUpdateForm(@PathVariable int id,Model model){
-=======
-    @GetMapping("/update")
-    public String getUpdateForm(@RequestParam int id,Model model){
->>>>>>> origin/main
         model.addAttribute("product",productService.getProductById(id));
         return "/update";
     }

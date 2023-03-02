@@ -11,15 +11,11 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <mvc:annotation-driven/>
-    <context:component-scan base-package="com.example.product"/>
+    <context:component-scan base-package="com.example"/>
 
     <bean id="viewResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
         <property name="prefix" value="/WEB-INF/views" />
         <property name="suffix" value=".html" />
-<<<<<<< HEAD
-        <property name="characterEncoding" value="UTF-8"/>
-=======
->>>>>>> origin/main
     </bean>
 
     <bean id="engine" class="org.thymeleaf.spring4.SpringTemplateEngine">
@@ -28,10 +24,6 @@
 
     <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
         <property name="templateEngine" ref="engine" />
-<<<<<<< HEAD
-        <property name="characterEncoding" value="UTF-8"/>
-=======
->>>>>>> origin/main
     </bean>
 
 </beans>
