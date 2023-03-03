@@ -39,18 +39,13 @@ public class ProductRepository implements IProductRepository{
         Session session = null;
         Transaction transaction = null;
         try {
-            session =SessionUtil.sessionFactory.openSession();
-            transaction = session.beginTransaction();
-            Product origin = getProductById(product.getId());
-            origin.setName(product.getName());
-            origin.setProducer(product.getProducer());
-            origin.setDetail(product.getDetail());
-            origin.setPrice(product.getPrice());
-            session.saveOrUpdate(origin);
+            session = SessionUtil.sessionFactory.openSession();
+            transaction = session.getTransaction();
+            transaction.begin();
+            session.persist(product);
             transaction.commit();
-            return origin;
-        }catch (Exception e) {
-            e.printStackTrace();
+
+        } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
             }
@@ -59,24 +54,55 @@ public class ProductRepository implements IProductRepository{
                 session.close();
             }
         }
-        return null;
     }
 
     @Override
     public void update(Product product) {
-//        for (Product product1: productList
-//             ) {
-//            if (product.getId()==product1.getId()){
-//                product1.setName(product.getName());
-//                product1.setPrice(product.getPrice());
-//                product1.setDetail(product.getDetail());
-//                product1.setProducer(product.getProducer());
-//            }
-//        }
+        Session session = null;
+        Transaction transaction = null;
+        try {
+            session = SessionUtil.sessionFactory.openSession();
+            transaction = session.getTransaction();
+            transaction.begin();
+            Product p = getProductById(product.getId());
+            p.setName(product.getName());
+            p.setProducer(product.getProducer());
+            p.setPrice(product.getPrice());
+            p.setDetail(product.getDetail());
+            session.update(p);
+            transaction.commit();
+
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+
     }
 
     @Override
     public void delete(int id) {
-//        productList.remove(getProductById(id));
+        Session session = null;
+        Transaction transaction = null;
+        try {
+            session = SessionUtil.sessionFactory.openSession();
+            transaction = session.getTransaction();
+            transaction.begin();
+            Product product = getProductById(id);
+            session.remove(product);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction!= null) {
+                transaction.rollback();
+            }
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
     }
 }

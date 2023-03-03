@@ -24,7 +24,7 @@ public class ProductController {
         model.addAttribute("product", this.productService.getProductById(id));
         return "/detail";
     }
-//
+
     @GetMapping("creation-form")
     public String getCreationForm(Model model) {
         model.addAttribute("product", new Product());
@@ -36,23 +36,22 @@ public class ProductController {
         this.productService.create(product);
         return "redirect:/product";
     }
-//
-//    @GetMapping("/delete/{id}")
-//    public String deleteProduct(@PathVariable int id) {
-//        this.productService.delete(id);
-//        return "redirect:/product";
-//
-//    }
-//    @GetMapping("/update/{id}")
-//    public String getUpdateForm(@PathVariable int id,Model model){
-//        model.addAttribute("product",productService.getProductById(id));
-//        return "/update";
-//    }
-//
-//    @PostMapping("update")
-//    public String getUpdate(@ModelAttribute Product product,Model model){
-//        productService.update(product);
-//        model.addAttribute("product", product);
-//        return "redirect:/product";
-//    }
+    @GetMapping("/delete")
+    public String deleteProduct(@RequestParam  int deleteId) {
+        this.productService.delete(deleteId);
+        return "redirect:/product";
+
+    }
+    @GetMapping("/update/{id}")
+    public String getUpdateForm(@PathVariable int id,Model model){
+        model.addAttribute("product",productService.getProductById(id));
+        return "/update";
+    }
+
+    @PostMapping("update")
+    public String getUpdate(@ModelAttribute Product product,Model model){
+        productService.update(product);
+        model.addAttribute("product", product);
+        return "redirect:/product";
+    }
 }
