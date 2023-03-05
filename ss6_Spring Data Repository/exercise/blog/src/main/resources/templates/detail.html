@@ -11,14 +11,23 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<div class="container" th:object="${blog}">
-    <div>
-        <h1 th:field="${blog.name}"></h1>
-    </div>
+<div class="container">
+    <h1>Đọc báo</h1>
+    <table class="table" th:object="${blog}">
+        <thead>
+        <tr>
+            <th th:text="${blog.name}"></th>
 
-    <div>
-        <span th:field="${blog.content}"></span>
-    </div>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td scope="row" th:text="${blog.content}"></td>
+
+        </tr>
+
+        </tbody>
+    </table>
 
 
 </div>

@@ -38,21 +38,21 @@ public class BlogController {
     }
 
     @GetMapping("/delete")
-    public String delete(@PathVariable int deleteId){
+    public String getDelete(@RequestParam int deleteId){
         service.delete(deleteId);
         return "redirect:/blogs";
     }
 
-//    @GetMapping("/update/{id}")
-//    public String getUpdateForm(@PathVariable int id,Model model){
-//        model.addAttribute("product",productService.getProductById(id));
-//        return "/update";
-//    }
-//
-//    @PostMapping("update")
-//    public String getUpdate(@ModelAttribute Blog product,Model model){
-//        productService.update(product);
-//        model.addAttribute("product", product);
-//        return "redirect:/product";
-//    }
+    @GetMapping("/update/{id}")
+    public String getUpdateForm(@PathVariable int id,Model model){
+        model.addAttribute("blog",service.getByID(id));
+        return "/edit";
+    }
+
+    @PostMapping("/update")
+    public String getUpdate(@ModelAttribute Blog blog,Model model){
+        service.save(blog);
+        model.addAttribute("blog", blog);
+        return "redirect:/blogs";
+    }
 }

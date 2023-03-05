@@ -12,6 +12,7 @@
 </head>
 <body>
 <div class="container">
+    <h1>Tạo mới Blog</h1>
 <form action="/blogs/create" method="post" th:object="${blog}">
     <input hidden="hidden" th:field="*{id}">
     <div class="form-group">

@@ -39,7 +39,7 @@
         Delete
       </button>
     </td>
-    <td><a th:href="@{/blogs/update/{id}(id=${blogs.id})}"></a>Update</td>
+    <td><a type="button" class="btn btn-danger" th:href="@{/blogs/update/{id}(id=${blogs.id})}">Update</a></td>
   </tr>
 
   </tbody>
@@ -55,10 +55,10 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="/blogs/delete">
+      <form action="/blogs/delete" method="get">
         <div class="modal-body">
           <input type="hidden" name="deleteId" id="deleteId">
-          <span>Bạn có chắc muốn xóa </span> <span id="deleteName"></span>?
+          <span>Bạn có chắc muốn xóa </span> <span id="deleteName" style="color: red"></span>?
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
