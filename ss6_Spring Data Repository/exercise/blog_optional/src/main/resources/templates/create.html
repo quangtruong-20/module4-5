@@ -34,7 +34,7 @@
     <div class="form-group">
         <label for="category">Thể loại</label>
         <select class="form-control" name="category" id="category" th:field="*{category}">
-            <option th:each="cate : ${categoryList}" th:text="${cate.name}" th:value="${cate.id}"></option>
+            <option th:each="cate : ${category}" th:text="${cate.name}" th:value="${cate.id}"></option>
         </select>
     </div>
 

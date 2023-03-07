@@ -16,8 +16,8 @@ public class BlogService implements IBlogService {
 
 
     @Override
-    public Page<Blog> getAll(Pageable pageable) {
-        return repository.findAll(pageable);
+    public Page<Blog> getAll(String name,Pageable pageable) {
+        return repository.findBlogByNameContaining(name,pageable);
     }
 
     @Override
@@ -35,9 +35,9 @@ public class BlogService implements IBlogService {
         repository.save(blog);
     }
 
-    @Override
-    public Page<Blog> searchBlog(String name, Pageable pageable) {
-        return repository.searchNameFreeStyle(name,pageable);
-    }
+//    @Override
+//    public Page<Blog> searchBlog(String name, Pageable pageable) {
+//        return repository.searchNameFreeStyle(name,pageable);
+//    }
 
 }

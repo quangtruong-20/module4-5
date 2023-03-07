@@ -6,7 +6,9 @@ import com.example.blog_optional.service.IBlogService;
 import com.example.blog_optional.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,19 +27,23 @@ public class BlogController {
     ICategoryService categoryService;
 
     @GetMapping("")
-    public String showList(Model model, @RequestParam(required = false, defaultValue = "") String name, @PageableDefault(size = 3) Pageable pageable) {
-        Page<Blog> blogs = name == null
-                ? this.service.getAll(pageable)
-                : this.service.searchBlog(name, pageable);
-        model.addAttribute("blog", blogs);
+    public String showList(Model model, @RequestParam(required = false, defaultValue = "") String name,
+                           @PageableDefault(size = 3) Pageable pageable) {
+//        Page<Blog> blogs = name == null ? this.service.getAll(pageable) : this.service.searchBlog(name, pageable);
+        if (name == null) {
+            name = "";
+        }
+        Sort sort = Sort.by("id").descending();
+        Pageable sortedPageable = PageRequest.of(pageable.getPageNumber(), pageable.getPageSize(), sort);
+        Page<Blog> blogPage = service.getAll(name, sortedPageable);
+        model.addAttribute("blog", blogPage);
         model.addAttribute("freeText", name);
 
         List<Integer> integers = new ArrayList<>();
-        for (int i = 0; i < blogs.getTotalPages(); i++) {
+        for (int i = 1; i <= blogPage.getTotalPages(); i++) {
             integers.add(i);
         }
         model.addAttribute("pages", integers);
-
         return "/list";
     }
 

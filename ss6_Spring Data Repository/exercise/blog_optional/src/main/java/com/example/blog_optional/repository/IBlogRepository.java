@@ -11,6 +11,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface IBlogRepository extends JpaRepository<Blog,Integer> {
-@Query(value = "select * from blog where name like %:freeText%",nativeQuery = true)
-   Page<Blog> searchNameFreeStyle( @Param("freeText") String name,Pageable pageable);
+
+Page<Blog> findBlogByNameContaining(String name,Pageable pageable);
+
+//@Query(value = "select * from blog where name like %:freeText%",nativeQuery = true)
+//   Page<Blog> searchNameFreeStyle( @Param("freeText") String name,Pageable pageable);
 }
