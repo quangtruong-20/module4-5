@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+
+
+<h1 style="text-align: center; color: aqua">List User</h1>
+<button class="btn btn-danger"><a th:href="@{/users/form-create}"> Create </a></button>
+<table class="table">
+    <thead>
+    <tr style="background-color: lightblue;" >
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Ages</th>
+        <th>Number Phone</th>
+        <th>Email</th>
+
+    </tr>
+    </thead>
+    <body>
+    <tr class="table-active" th:each="user:${userList}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${user.phoneNumber}"></td>
+        <td th:text="${user.email}"></td>
+
+    </tr>
+    </body>
+</table>
+</div>
+</body>
+</html>
