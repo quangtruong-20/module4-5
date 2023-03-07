@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>List Music</title>
+    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,34 +11,37 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
-  <h1>List Music</h1>
-  <button type="button" class="btn btn-primary"><a th:href="@{/musics/create}">Create</a></button>
-  <table class="table">
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Singer</th>
-      <th>Kind Of Music</th>
-      <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="m : ${music}">
-      <td th:text="${m.name}" ></td>
-      <td th:text="${m.singer}"></td>
-      <td th:text="${m.kindOfMusic}" ></td>
-      <td>
-        <a type="button" class="btn btn-danger" th:href="@{/musics/update/{id}(id = ${m.id})}">Update</a></td>
-    </tr>
-    <tr>
 
-    </tbody>
-  </table>
+<div class="container">
+    <form action="/musics/create" method="post" th:object="musicDto">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text"
+                   class="form-control" th:field="*{name}" id="name" aria-describedby="helpId" >
+            <small th:if="${#fields.hasErrors('name')}" th:errors="*{name}"  id="helpId" class="form-text text-muted"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="singer">Singer</label>
+            <input type="text"
+                   class="form-control" th:field="*{singer}" id="singer" aria-describedby="helpId"  >
+            <small th:if="${#fields.hasErrors('singer')}" th:errors="*{singer}"  id="helpId" class="form-text text-muted"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="kindOfMusic">Name</label>
+            <input type="text"
+                   class="form-control" th:field="*{kindOfMusic}" id="kindOfMusic" aria-describedby="helpId" >
+            <small th:if="${#fields.hasErrors('kindOfMusic')}" th:errors="*{kindOfMusic}"  id="helpId" class="form-text text-muted"></small>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 
 
 
 </div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
