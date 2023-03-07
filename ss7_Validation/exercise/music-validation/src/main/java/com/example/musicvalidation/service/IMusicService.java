@@ -10,5 +10,4 @@ public interface IMusicService {
 
     void create(Music music);
 
-    Music findById(Integer id);
 }

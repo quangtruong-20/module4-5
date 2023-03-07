@@ -23,8 +23,5 @@ public class MusicService implements IMusicService{
         iMusicRepository.save(music);
     }
 
-    @Override
-    public Music findById(Integer id) {
-        return iMusicRepository.findById(id).get();
-    }
+
 }

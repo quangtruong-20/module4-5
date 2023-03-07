@@ -13,26 +13,26 @@
 <body>
 
 <div class="container">
-    <form action="/musics/create" method="post" th:object="musicDto">
+    <form action="/musics/create" method="post" th:object="${musicDto}">
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text"
-                   class="form-control" th:field="*{name}" id="name" aria-describedby="helpId" >
-            <small th:if="${#fields.hasErrors('name')}" th:errors="*{name}"  id="helpId" class="form-text text-muted"></small>
+                   class="form-control" th:field="*{name}" id="name"  >
+            <small th:if="${#fields.hasErrors('name')}" th:errors="*{name}"   class="form-text text-muted"></small>
         </div>
 
         <div class="form-group">
             <label for="singer">Singer</label>
             <input type="text"
-                   class="form-control" th:field="*{singer}" id="singer" aria-describedby="helpId"  >
-            <small th:if="${#fields.hasErrors('singer')}" th:errors="*{singer}"  id="helpId" class="form-text text-muted"></small>
+                   class="form-control" th:field="*{singer}" id="singer"   >
+            <small th:if="${#fields.hasErrors('singer')}" th:errors="*{singer}"   class="form-text text-muted"></small>
         </div>
 
         <div class="form-group">
             <label for="kindOfMusic">Name</label>
             <input type="text"
-                   class="form-control" th:field="*{kindOfMusic}" id="kindOfMusic" aria-describedby="helpId" >
-            <small th:if="${#fields.hasErrors('kindOfMusic')}" th:errors="*{kindOfMusic}"  id="helpId" class="form-text text-muted"></small>
+                   class="form-control" th:field="*{kindOfMusic}" id="kindOfMusic"  >
+            <small th:if="${#fields.hasErrors('kindOfMusic')}" th:errors="*{kindOfMusic}"   class="form-text text-muted"></small>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
