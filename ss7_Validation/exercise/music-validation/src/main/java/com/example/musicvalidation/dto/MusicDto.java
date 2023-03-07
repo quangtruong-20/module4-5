@@ -17,6 +17,34 @@ public class MusicDto {
     private String singer;
     @NotBlank(message = "Không được để trống")
     @Size(max = 1000, message = "Không vượt quá 1000 ký tự")
-    @Pattern(regexp = "^[a-zA-Z0-9]*$", message = "Chỉ chấp nhận ký tự chữ cái và số")
+    @Pattern(regexp = "^[^,\\p{P}]*$", message = "Không được chứa ký tự đặc biệt")
     private String kindOfMusic;
+
+
+    public MusicDto() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSinger() {
+        return singer;
+    }
+
+    public void setSinger(String singer) {
+        this.singer = singer;
+    }
+
+    public String getKindOfMusic() {
+        return kindOfMusic;
+    }
+
+    public void setKindOfMusic(String kindOfMusic) {
+        this.kindOfMusic = kindOfMusic;
+    }
 }
