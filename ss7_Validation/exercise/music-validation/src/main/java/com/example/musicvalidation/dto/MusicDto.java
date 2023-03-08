@@ -5,8 +5,8 @@ import javax.validation.constraints.*;
 public class MusicDto {
 
     @NotNull(message = "Không được để trống")
-@Size(max = 800, message = "Không vượt quá 800 ký tự")
-@Pattern(regexp = "^[a-zA-Z0-9]*$", message = "Chỉ chấp nhận ký tự chữ cái và số")
+    @Size(max = 800, message = "Không vượt quá 800 ký tự")
+    @Pattern(regexp = "^[a-zA-Z0-9]*$", message = "Chỉ chấp nhận ký tự chữ cái và số")
     private String name;
     @NotNull(message = "Không được để trống")
     @Size(max = 300, message = "Không vượt quá 300 ký tự")
