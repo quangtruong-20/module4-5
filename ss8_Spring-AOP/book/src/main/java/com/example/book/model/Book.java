@@ -1,5 +1,7 @@
 package com.example.book.model;
+
 import lombok.Data;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
@@ -11,7 +13,7 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private  Long quantity;
+    private Long quantity;
 
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(

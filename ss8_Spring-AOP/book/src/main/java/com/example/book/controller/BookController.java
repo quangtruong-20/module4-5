@@ -34,18 +34,23 @@ public class BookController {
     }
 
     @GetMapping("/order/{id}")
-    String order(@PathVariable int id , Model model) {
+    String order(@PathVariable int id, Model model) throws Exception {
+
+        Book book = iBookService.findById(id);
+        if (book.getQuantity() == 0){
+            throw new Exception();
+        }
+        book.setQuantity(book.getQuantity() - 1);
+
+
         // tạo ra order mới
         Order order = new Order();
         // set code cho order
-        long code = (long) (Math.random() * (99999 - 100000) + 10000);
+        long code = (long) (Math.random() * (99999 - 10000) + 10000);
         order.setCode(code);
         //set date cho order
         long millis = System.currentTimeMillis();
         order.setDate(new java.sql.Date(millis));
-
-        Book book = iBookService.findById(id);
-        book.setQuantity(book.getQuantity() - 1);
 
         // trong book có list order thì lấy ra list đó
         List<Order> orders = book.getOrderList();
