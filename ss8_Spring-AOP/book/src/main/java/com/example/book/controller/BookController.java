@@ -69,8 +69,23 @@ public class BookController {
         return "back";
     }
 
-    @PostMapping("/back")
-    String giveBack(@PathVariable int id, Model model) {
-        return "back";
+    @PostMapping("/back/{code}")
+    String giveBack(@PathVariable Long code, Model model) throws Exception {
+//        Order order = iOrderService.findByCode(code);
+//        if (!order.equals(code)){
+//            throw new Exception();
+//        }
+//        Book book1 = new Book();
+//        book1.setQuantity(book1.getQuantity() + 1);
+//        // set code cho order
+//        order.getCode();
+//        // trong book có list order thì lấy ra list đó
+//        List<Order> orders = book1.getOrderList();
+//        // add thêm order mới của mình vào
+//        orders.add(order);
+//        // thay đổi lại list
+//        book1.setOrderList(orders);
+//        iBookService.create(book1);
+        return "redirect:/books";
     }
 }
