@@ -20,7 +20,7 @@
     <div><a href="/shopping-cart">Giỏ hàng</a></div>
     <div class="row">
     <div class="card col-3" style="width: 18rem;" th:each="product:${products}">
-        <img class="card-img-top" th:src="@{product.panelUrl}" alt="Card image cap">
+        <img class="card-img-top" th:src="${product.panelUrl}" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title"><a th:href="@{/{id}(id=${product.id})}" th:text="${product.name}"></a></h5>
             <p class="card-text" th:text="${product.price}"></p>

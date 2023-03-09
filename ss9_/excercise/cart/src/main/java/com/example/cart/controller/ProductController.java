@@ -64,8 +64,24 @@ public class ProductController {
     }
 
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable Long id){
-        productService.delete(id);
+    public String deleteToCart(@PathVariable long id,
+                               @ModelAttribute Cart cart,
+                               @RequestParam("action") String action) {
+        Optional<Product> productOptional = productService.findById(id);
+        if (!productOptional.isPresent()) {
+            return "/error.404";
+        }
+        if (action.equals("show")) {
+            cart.deleteProduct(productOptional.get());
+            return "redirect:/shopping-cart";
+        }
+        cart.addProduct(productOptional.get());
+        return "redirect:/shop";
+    }
+
+    @GetMapping("/pay/")
+    public String payToCart(@ModelAttribute Cart cart) {
+        cart.deleteAll();
         return "redirect:/shopping-cart";
     }
 }
