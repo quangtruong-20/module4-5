@@ -2,6 +2,7 @@ package com.example.book.controller;
 
 import com.example.book.model.Book;
 import com.example.book.service.IBookService;
+import com.example.book.service.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +14,8 @@ public class BookController {
 
     @Autowired
     IBookService iBookService;
-
+    @Autowired
+    IOrderService iOrderService;
     @GetMapping("")
     String showList(Model model){
         model.addAttribute("bookList",iBookService.findAll());
