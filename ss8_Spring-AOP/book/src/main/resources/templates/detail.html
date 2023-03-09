@@ -27,7 +27,7 @@
             <td th:text="*{id}"></td>
             <td th:text="*{name}"></td>
             <td th:text="*{quantity}"></td>
-            <td >Mượn sách</td>
+            <td><button type="button" class="btn btn-danger"><a th:href="@{/books/order/{id}(id=*{id})}">Mượn sách</a></button></td>
         </tr>
         </tbody>
     </table>

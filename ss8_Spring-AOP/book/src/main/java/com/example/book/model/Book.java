@@ -1,6 +1,7 @@
 package com.example.book.model;
 import lombok.Data;
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -10,14 +11,14 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private  String quantity;
+    private  Long quantity;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(
             name = "order_book",
             joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "order_id"))
-    Set<Order> orderSet;
+    List<Order> orderList;
 
 
     public Book() {
@@ -39,19 +40,19 @@ public class Book {
         this.name = name;
     }
 
-    public String getQuantity() {
+    public Long getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(Long quantity) {
         this.quantity = quantity;
     }
 
-    public Set<Order> getOrderSet() {
-        return orderSet;
+    public List<Order> getOrderList() {
+        return orderList;
     }
 
-    public void setOrderSet(Set<Order> orderSet) {
-        this.orderSet = orderSet;
+    public void setOrderList(List<Order> orderList) {
+        this.orderList = orderList;
     }
 }
