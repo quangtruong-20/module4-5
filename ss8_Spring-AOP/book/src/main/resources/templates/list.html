@@ -30,7 +30,7 @@
             <td th:text="${b.id}"></td>
             <td th:text="${b.name}"></td>
             <td th:text="${b.quantity}"></td>
-            <td><a class="button" th:href="@{/books/{id}(id=${b.id})}">Xem chi tiết</a></td>
+            <td><a class="button" th:href="@{/books/{id}(id=$ {b.id})}">Xem chi tiết</a></td>
         </tr>
         </tbody>
     </table>
