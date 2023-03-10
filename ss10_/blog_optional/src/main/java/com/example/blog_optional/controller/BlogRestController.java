@@ -32,12 +32,7 @@ public class BlogRestController {
     public Blog findById(@PathVariable int id){
         return this.blogService.getByID(id);
     }
-    @GetMapping("/category/{id}")
-    public Page<Blog> getAllByCategory(
-            @RequestParam(name = "id",required = false,defaultValue = "") Integer id,
-            @PageableDefault(size = 3)Pageable pageable){
-        return this.blogService.getBlogByCategory(id, pageable);
-    }
+
 
 
 }
