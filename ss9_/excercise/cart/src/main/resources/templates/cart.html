@@ -22,16 +22,16 @@
   <table border="1">
     <tr>
       <th>Item</th>
+        <th>Name</th>
       <th>Quantity</th>
       <th>Price</th>
-        <th></th>
     </tr>
     <tr th:each="product: ${cart.products}">
-      <td th:text="${product.getKey().name}"></td>
       <td>
         <button class="position-absolute btn btn-danger" ><a th:href="@{/delete/__${product.getKey().id}__(action='show')}" style="color: white;text-decoration: none" >X</a></button>
         <img th:src="${product.key.panelUrl}" height="100" width="100">
       </td>
+      <td th:text="${product.getKey().name}"></td>
       <td>
         <a id="decrease_button" th:href="@{/minus/__${product.getKey().id}__(action='show')}" th:text="${'-'}"></a>
         <span th:text="${product.getValue()}"></span>
@@ -39,7 +39,6 @@
            th:text="${'+'}"></a>
       </td>
       <td th:text="${product.getKey().price}"></td>
-
     </tr>
     <tr>
       <td>Total</td>

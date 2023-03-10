@@ -31,4 +31,9 @@ public class OrderService implements IOrderService {
     public Order findByCode(Long code) {
         return iOrderRepository.findOrderByCode(code);
     }
+
+    @Override
+    public void delete(Order order) {
+        iOrderRepository.delete(order);
+    }
 }

@@ -13,10 +13,10 @@
 <body>
 <h1 style="text-align: center; color: aqua ">Give Book Back</h1>
 <p>Nhập ID sách muốn trả</p>
-<div class="input-group">
-    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-    <button type="button" class="btn btn-outline-primary">search</button>
-</div>
+<form action="/book/pay" method="post">
+    <input type="number" name="code"  >
+    <input class="btn btn-primary" type="submit" value="Pay">
+</form>
 <!--th:object="${book}"-->
 <!--th:field="${book.id}"-->
 <!-- Optional JavaScript -->

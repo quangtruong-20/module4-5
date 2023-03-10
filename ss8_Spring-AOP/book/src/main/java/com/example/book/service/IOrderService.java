@@ -12,4 +12,7 @@ public interface IOrderService {
     Order findById(int id);
 
     Order findByCode(Long code);
+
+
+    void delete(Order order);
 }

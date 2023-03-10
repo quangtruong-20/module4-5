@@ -37,12 +37,10 @@ public class BookController {
     String order(@PathVariable int id, Model model) throws Exception {
 
         Book book = iBookService.findById(id);
-        if (book.getQuantity() == 0){
+        if (book.getQuantity() == 0) {
             throw new Exception();
         }
         book.setQuantity(book.getQuantity() - 1);
-
-
         // tạo ra order mới
         Order order = new Order();
         // set code cho order
@@ -51,7 +49,6 @@ public class BookController {
         //set date cho order
         long millis = System.currentTimeMillis();
         order.setDate(new java.sql.Date(millis));
-
         // trong book có list order thì lấy ra list đó
         List<Order> orders = book.getOrderList();
         // add thêm order mới của mình vào
@@ -71,21 +68,11 @@ public class BookController {
 
     @PostMapping("/back/{code}")
     String giveBack(@PathVariable Long code, Model model) throws Exception {
-//        Order order = iOrderService.findByCode(code);
-//        if (!order.equals(code)){
-//            throw new Exception();
-//        }
-//        Book book1 = new Book();
-//        book1.setQuantity(book1.getQuantity() + 1);
-//        // set code cho order
-//        order.getCode();
-//        // trong book có list order thì lấy ra list đó
-//        List<Order> orders = book1.getOrderList();
-//        // add thêm order mới của mình vào
-//        orders.add(order);
-//        // thay đổi lại list
-//        book1.setOrderList(orders);
-//        iBookService.create(book1);
+        Order order = iOrderService.findByCode(code);
+        Book book1 = iBookService.findById(order.getId());
+        book1.setQuantity(book1.getQuantity() + 1);
+        iBookService.create(book1);
+        iOrderService.delete(order);
         return "redirect:/books";
     }
 }
