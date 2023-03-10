@@ -5,13 +5,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 public interface IBlogService {
-    Page<Blog> getAll(String name ,Pageable pageable);
-   Blog getByID(int id);
+    Page<Blog> getAll(String name, Pageable pageable);
 
-   void delete(int id);
-
-   void save(Blog blog);
+    Blog getByID(int id);
 
 
-    Page<Blog> getBlogByCategory(Integer id ,Pageable pageable);
 }

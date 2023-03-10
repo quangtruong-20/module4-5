@@ -17,7 +17,7 @@ import java.util.Set;
 @RequestMapping("/rest/category")
 public class CategoryRestController {
 
-//    Xem danh sách các category
+    //    Xem danh sách các category
 //
     @Autowired
     ICategoryService categoryService;
@@ -25,19 +25,18 @@ public class CategoryRestController {
 
     @GetMapping("")
     @ResponseStatus(HttpStatus.OK)
-    List<Category> findAll(){
+    List<Category> findAll() {
         return this.categoryService.getAllCategory();
-    };
+    }
 
-//    Xem danh sách các bài viết của một category
+    //    Xem danh sách các bài viết của một category
 
     @GetMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Set<Blog> getByid(@PathVariable int id){
-        Category category =this.categoryService.getCategoryByID(id);
+    public Set<Blog> getByid(@PathVariable int id) {
+        Category category = this.categoryService.getCategoryByID(id);
         return category.getBlogs();
     }
-
 
 
 }

@@ -24,24 +24,4 @@ public class BlogService implements IBlogService {
         return repository.findById(id).orElse(null);
     }
 
-    @Override
-    public void delete(int id) {
-            repository.deleteById(id);
-    }
-
-    @Override
-    public void save(Blog blog) {
-        repository.save(blog);
-    }
-
-    @Override
-    public Page<Blog> getBlogByCategory(Integer id, Pageable pageable) {
-        return repository.findBlogByCategory_Id(id,pageable);
-    }
-
-//    @Override
-//    public Page<Blog> searchBlog(String name, Pageable pageable) {
-//        return repository.searchNameFreeStyle(name,pageable);
-//    }
-
 }
