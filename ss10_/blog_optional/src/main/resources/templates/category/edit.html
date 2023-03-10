@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Title</title>
+    <title>Sửa Category</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,21 +11,18 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<div class="container">
-    <h3 style="color: red">Danh sách sản phẩm</h3>
-    <div><a href="/shopping-cart">Giỏ hàng</a></div>
-    <div class="row">
-    <div class="card col-3" style="width: 18rem;" th:each="product:${products}">
-        <img class="card-img-top" th:src="${product.panelUrl}" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title"><a th:href="@{/{id}(id=${product.id})}" th:text="${product.name}"></a></h5>
-            <p class="card-text" th:text="${product.price}"></p>
-            <a th:href="@{/add/__${product.id}__(action='show')}" class="btn btn-primary">Add To Cart</a>
-        </div>
+<form action="/categorys/update" method="post" th:object="${category}">
+    <input type="hidden" th:field="${category.id}" >
+    <div class="form-group">
+        <label for="name">Tên thể loại</label>
+        <input type="text"
+               class="form-control" th:field="${category.name}" id="name" >
     </div>
-</div>
-</div>
 
+    <a  type="button" class="btn btn-primary" th:href="@{/categorys}">Cancel</a>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+
+</form>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

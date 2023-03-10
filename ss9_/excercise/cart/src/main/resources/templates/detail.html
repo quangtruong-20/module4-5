@@ -12,20 +12,34 @@
 </head>
 <body>
 <div class="container">
-    <h3 style="color: red">Danh sách sản phẩm</h3>
-    <div><a href="/shopping-cart">Giỏ hàng</a></div>
-    <div class="row">
-    <div class="card col-3" style="width: 18rem;" th:each="product:${products}">
-        <img class="card-img-top" th:src="${product.panelUrl}" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title"><a th:href="@{/{id}(id=${product.id})}" th:text="${product.name}"></a></h5>
-            <p class="card-text" th:text="${product.price}"></p>
-            <a th:href="@{/add/__${product.id}__(action='show')}" class="btn btn-primary">Add To Cart</a>
+    <div class="container">
+        <div class="row" th:object="${product}">
+            <div class="col-3">
+                <div  style="width: 18rem;" >
+                    <img class="card-img-top" th:src="@{product.panelUrl}" alt="Card image cap">
+                    <div class="card-body">
+                       Mã sản phẩm <p class="card-title" th:text="*{id}"></p>
+                        <p class="card-text" th:text="*{price}"></p>
+                        <a th:href="@{/add/__${product.id}__(action='list')}" class="btn btn-primary">Mua ngay</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="row">
+                    <div class="col-12">
+                        <h5 th:text="*{name}"></h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p th:text="*{description}"></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
 
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
