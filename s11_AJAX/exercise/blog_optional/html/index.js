@@ -1,7 +1,30 @@
-    // ?page=${page ? page : "0"
+function renderBlogs(blogs, append) {
+    let elements = "";
+    for (let blog of blogs) {
+        elements +=
+            `
+    <tr>
+        <td >${blog.id}</td>
+        <td >${blog.name}</td>
+        <td >${blog.content}</td>
+<!--        // <td >${blog.author}</td>-->
+<!--        // <td >${blog.category}</td>-->
+ 
+    </tr>
+`;
+    }
+    if (append){
+        $("#listBlogs").append(elements);
+    }else {
+        $("#listBlogs").html(elements);
+    }
+
+}
+
 function loadBlogs(page, append) {
     $.ajax({
-        type: "GET", url: `http://localhost:8080/rest/blogs?page=${page ? page : "0"}`, headers: {
+        type: "GET", url: `http://localhost:8080/rest/blogs?page=${page ? page : "0"}`,
+        headers: {
             "Content-Type": "application/json",
 
         }, success: function (data) {
@@ -19,36 +42,20 @@ $(document).ready(function () {
 })
 
 
-function renderBlogs(blogs, append) {
-    let elements = "";
-    for (let blog of blogs) {
-        elements +=
-            `<table class="table">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Content</th>
-        <th>Author</th>
-        <th>Category</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td >${blog.id}</td>
-        <td >${blog.name}</td>
-        <td >${blog.content}</td>
-        <td >${blog.author}</td>
-        <td >${blog.category}</td>
-       
-    </tr>
-    </tbody>
-</table>`;
-    }
-    if (append){
-        $("#listBlogs").append(elements)
+function loadMore(nextPage) {
+    loadBlogs(nextPage,true);
+}
+function renderLoadMore(blogPageData) {
+    if (blogPageData.number <blogPageData.totalPages -1){
+        $("#loadMoreContainer").html (
+            `
+            <button type="button" class="btn btn-primary"
+                onclick="loadMore(${blogPageData.number + 1})">
+                Load More
+                </button>
+            `
+        )
     }else {
-        $("listBlogs").html
+        $("#loadMoreContainer").remove();
     }
-
 }

@@ -18,10 +18,14 @@
     />
 </head>
 <body>
-
+<h1>Danh sách Blogs</h1>
+<div class="mb-2">
+    <input type="text" name="name" id="name" placeholder="search..." class="mb-3">
+    <button type="button" onclick="loadBlogs()">Search</button>
+</div>
+<div id="searchBlogs"></div>
 <div id="listBlogs" class="container row mx-auto"></div>
-
-<!--    <div id="loadMoreContainer" class="d-flex justify-content-center"></div>-->
+<div id="loadMoreContainer" class="d-flex justify-content-center"></div>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
