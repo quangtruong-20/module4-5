@@ -22,13 +22,14 @@ function renderBlogs(blogs, append) {
 }
 
 function loadBlogs(page, append) {
+    let search = document.getElementById("name").value;
     $.ajax({
-        type: "GET", url: `http://localhost:8080/rest/blogs?page=${page ? page : "0"}`,
+        type: "GET", url: `http://localhost:8080/rest/blogs?page=${page ? page : "0"}&tittle=` + search,
         headers: {
             "Content-Type": "application/json",
 
         }, success: function (data) {
-            renderBlogs(data.content, append);
+            renderBlogs(data.content,append);
             renderLoadMoreButton(data);
         }, error: function (error) {
             console.log(error);
@@ -45,8 +46,8 @@ $(document).ready(function () {
 function loadMore(nextPage) {
     loadBlogs(nextPage,true);
 }
-function renderLoadMore(blogPageData) {
-    if (blogPageData.number <blogPageData.totalPages -1){
+function renderLoadMoreButton(blogPageData) {
+    if (blogPageData.number < blogPageData.totalPages - 1){
         $("#loadMoreContainer").html (
             `
             <button type="button" class="btn btn-primary"
@@ -54,7 +55,7 @@ function renderLoadMore(blogPageData) {
                 Load More
                 </button>
             `
-        )
+        );
     }else {
         $("#loadMoreContainer").remove();
     }
