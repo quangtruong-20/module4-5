@@ -51,8 +51,8 @@ console.log(result);
 
 // Yêu cầu 2: Sử dụng cú pháp ES6 để xuất ra màn hình danh sách các bài đăng có rating < 4 với yêu cầu giá trị các phần tử của mảng mới có định dạng:
 // ví dụ: [“2 - Angular Tutorial - 2.5”]
-let result2 = addedCourses.filter(addedCourse => addedCourse.rating < 4)
-let result3 = result2.map(addedCourse => addedCourse.id + " - " + addedCourse.title + " - " + addedCourse.rating)
+let result2 = courses.filter(courses => courses.rating < 4)
+let result3 = result2.map(courses => courses.id + " - " + courses.title + " - " + courses.rating)
 console.log(result3);
 
 
