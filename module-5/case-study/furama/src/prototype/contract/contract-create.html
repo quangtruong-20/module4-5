@@ -32,7 +32,6 @@
             background-attachment: fixed;
         }
         #header-nav {
-            /*background-image: url();*/
             background-size: cover;
             background-repeat: no-repeat;
             width: 100%;
@@ -98,92 +97,53 @@
     </div>
 </header>
 
-<h1 style="text-align: center;color: #0dcaf0">Tạo mới dịch vụ</h1>
-<div class="row">
-    <div class="col-md-4">
-        <button  class="btn btn-outline-primary">Danh sách</button>
-    </div>
-    <div class="col-md-8">
-        <div style="text-align: center;justify-content: center">
-            <form >
-                <div class="col-md-6">
-                    <label>Facility Type:</label>
-                    <label class="form-label">
-                        <select class="form-select" >
-                            <option >Vui lòng chọn kiểu dịch vụ</option>
+<div class="card-header">
+    <strong id="inDam"><h1 class="card-title" style="color: red">Tạo mới hợp đồng</h1></strong>
+</div>
+<form >
+    <div class="card-body">
+        <div class="row col-md-12 col-xl-12 col-sm-12">
 
-                        </select>
-                    </label>
 
-                </div>
-                <div class="col-md-6" style="text-align: center">
-                    <label class="form-label" for="name">Name:</label>
-                    <input class="form-control" type="text" id="name" >
-                </div>
-                <div class="col-md-6">
-                    <label for="area">Area:</label>
-                    <input class="form-control" type="text" id="area" >
-                </div>
-                <div class="col-md-6">
-                    <label for="image">Img:</label>
-                    <input class="form-control" type="text" id="image"
-                           placeholder="dán link ảnh bạn muốn">
+            <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                <label class="form-label" for="facility">Name Facility</label><br>
+                <select style="width: 100%; height: 70%;" class="form-select" id="facility" >
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
 
-                </div>
-                <div class="col-md-6">
-                    <label for="cost">Cost:</label>
-                    <input class="form-control" type="text" id="cost" >
-                </div>
-                <div class="col-md-6">
-                    <label for="maxPeople">Max People:</label>
-                    <input class="form-control" type="number" id="maxPeople" >
 
-                </div>
-                <div class="col-md-6">
-                    <label for="standardRoom">standardRoom:</label>
-                    <input class="form-control" type="number" id="standardRoom">
+            <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                <label class="form-label" for="name_customer">Name Customer</label><br>
+                <select style="width: 100%; height: 70%;" class="form-select" id="name_customer" >
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
 
-                </div>
-                <br>
-                <div class="col-md-6">
-                    <label class="form-label">Rent Type:</label>
-                    <label>
-                        <select class="form-select" >
-                            <option>Vui lòng chọn kiểu thuê</option>
-                        </select>
-                    </label>
 
-                </div>
-                <p class="col-md-6">
-                    <label class="form-label" for="descriptionOfOtherConvenience">Description:</label>
-                    <input class="form-control" type="text" id="descriptionOfOtherConvenience"
-                          >
-                </p>
-                <div class="col-md-6" *ngIf="idCheck == 1">
-                    <label class="form-label" for="poolArea">Area of pool:</label>
-                    <input
-                            class="form-control" type="number" id="poolArea" >
-
-                </div>
-                <div class="col-md-6" *ngIf="idCheck == 1 || idCheck == 2">
-                    <label class="form-label" for="numberOfFloors">Number of Floors:</label>
-                    <input  class="form-control" type="number"
-                            id="numberOfFloors" >
-
-                </div>
-                <div>
-                    <p class="col-md-6">
-                        <label class="form-label" for="attachFacility">Attach Facility:</label>
-                        <input class="form-control" type="text" id="attachFacility" >
-                    </p>
-                </div>
-                <button  style="text-align: left" class="btn btn-info" type="submit">Tạo mới</button>
-            </form>
+            <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                <label class="form-label" for="dayStart">Day Start:</label>
+                <input type="date" class="form-control time-mask" placeholder="?" id="dayStart" >
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                <label class="form-label" for="endDateForm">End Day:</label>
+                <input type="text" class="form-control numeral-mask" placeholder="input number people" id="endDateForm">
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12 mb-2">
+                <label class="form-label" for="deposit">Deposit(VNĐ):</label>
+                <input type="number" class="form-control block-mask" placeholder="giá" id="deposit" >
+            </div>
+        </div>
+        <div class="col-12">
+            <button type="reset" class="btn btn-primary me-1 waves-effect waves-float waves-light">Submit</button>
+            <button type="reset" class="btn btn-outline-secondary waves-effect">Reset</button>
         </div>
     </div>
-</div>
-
-
+</form>
 <footer>
     <div class="container-fluid">
         <div class="row mt-5">
