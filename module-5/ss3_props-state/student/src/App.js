@@ -1,19 +1,7 @@
 
 import './App.css';
-const studentList = [
-  {
-    id: '1',
-    name: 'Maria Anders',
-    age: '18',
-    address: 'Germany',
-  },
-  {
-    id: '2',
-    name: 'Seo',
-    age: '19',
-    address: 'Germany',
-  },
-]
+import StudentInfor from "./components/StudentInfor";
+
 
 function App() {
   return (
@@ -27,15 +15,8 @@ function App() {
           <th>Address</th>
         </tr>
         </thead>
-        <tbody>
-          {studentList.map(item => (
-        <tr  key={item.id}>
-            <td>{item.id}</td>
-            <td>{item.name}</td>
-            <td>{item.age}</td>
-            <td>{item.address}</td>
-        </tr>
-          ))}
+        <tbody >
+        <StudentInfor/>
         </tbody>
       </table>
     </>
