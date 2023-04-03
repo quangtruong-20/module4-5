@@ -1,32 +1,124 @@
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
+
+const facilityList = [
+    {
+        img: "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-768x497.jpg",
+        name: "PHÒNG SUITE HƯỚNG BIỂN",
+        area: "Diện tích phòng: 85.8 m2",
+        price: "20000",
+    },
+    {
+        img: "https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Pool_Villas-F-768x497.jpg",
+        name: "PHÒNG DELUXE HƯỚNG BIỂN",
+        area: "Diện tích phòng: 40.1 m2",
+        price: "20000",
+    },
+    {
+        img: "https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas-_Exterior-1-F-768x497.jpg",
+        name: "PHÒNG SUPERIOR HƯỚNG HỒ",
+        area: "Diện tích phòng: 43.7 m2",
+        price: "20000",
+    },
+
+
+];
+
 function FacilityList() {
     return (
 
         <div>
-        <h2 className="text-center fw-bold my-3">DANH SÁCH DỊCH VỤ</h2>
+            <Header/>
+            <div >
+                <div className="heading-img">
+                    <img style={{width : '100%'}} src="https://furamavietnam.com/wp-content/uploads/2018/08/banner01.jpg?id=1433"/>
+                    <h2 style={{fontSize: '40px', color: '#ffffff', textAlign: 'center', fontFamily: 'Playfair Display', fontWeight: 700, fontStyle: 'normal',position: 'relative',
+                        top: '-166px'}}>LOẠI PHÒNG</h2>
+                </div>
 
-    <table className="table table-bordered">
-        <tr>
-            <th className="text-center">#</th>
-            <th>Tên dịch vụ</th>
-            <th>Diện tích (m<sup>2</sup>)</th>
-            <th>Chi phí thuê</th>
-            <th>Dịch vụ miễn phí đi kèm</th>
-            <th>Số người tối đa</th>
-            <th>Số tầng</th>
-            <th>Mô tả tiện nghi khác</th>
-            <th>Diện tích hồ bơi</th>
-            <th>Loại phòng</th>
-            <th>Loại dịch vụ</th>
-            <th>Kiểu thuê</th>
-            <th className="text-center">Sửa</th>
-            <th className="text-center">Xóa</th>
-        </tr>
-        <tr>
+                <div className="container">
 
-        </tr>
-    </table>
+                    {/*them moi*/}
+                    <div className="element-button mb-5">
+                        <a
+                            className="btn btn-add btn-sm bg-success text-white"
+                            href="add-form-facilities.html"
+                        >
+                            <i className="fas fa-plus"></i>
+                            Tạo mới dịch vụ
+                        </a>
+                    </div>
+                    {/*card*/}
+                    <div className="row">
+                        {facilityList.map((facility, index) => (
+                            <div className="col-4" key={index}>
+                                <div className="card">
+                                    <img
+                                        src={facility.img}
+                                        className="card-img-top"
+                                        alt="..."
+                                        width="370"
+                                        height="239"
+                                    />
+                                    <div className="card-body">
+                                        <h5 className="card-title">{facility.name}</h5>
+                                        <p className="card-text">{facility.area}</p>
+                                        <button
+                                            type="button"
+                                            className="btn btn-danger btn-sm"
+                                            data-toggle="modal"
+                                            data-target="#exampleModal"
+                                            style={{marginLeft: '104px', marginRight: '14px'}}
+                                        >
+                                            <i className="fas fa-trash-alt">Xóa</i>
+                                        </button>
+                                        <button
+                                            className="btn btn-primary btn-sm"
+                                            href="edit-form-facilities.html"
+                                        >
+                                            <i className="fas fa-edit">Sửa</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="mt-5">
+                        <nav aria-label="Page navigation example">
+                            <ul className="pagination justify-content-center">
+                                <li className="page-item">
+                                    <a className="page-link" href="#">
+                                        <i className="ti-angle-left"></i>
+                                    </a>
+                                </li>
+                                <li className="page-item">
+                                    <a className="page-link" href="#">
+                                        1
+                                    </a>
+                                </li>
+                                <li className="page-item">
+                                    <a className="page-link" href="#">
+                                        2
+                                    </a>
+                                </li>
+                                <li className="page-item">
+                                    <a className="page-link" href="#">
+                                        3
+                                    </a>
+                                </li>
+                                <li className="page-item">
+                                    <a className="page-link" href="#">
+                                        <i className="ti-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <Footer/>
         </div>
-)
+    )
 }
 
 export default FacilityList;

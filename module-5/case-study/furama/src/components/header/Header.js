@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css"
+import FacilityList from "../facility/FacilityList";
 function Header() {
     return(
         <div>
@@ -19,36 +20,19 @@ function Header() {
                             <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
                                 >
                                 <li className="nav-item">
-                                    <a className="nav-link active text-white" aria-current="page" href="/#">GIỚI
-                                        THIỆU</a>
+                                    <a className="nav-link active text-white" aria-current="page" href="facility-list.html">
+                                      DỊCH VỤ </a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link active text-white" aria-current="page" href="/#">LOẠI
-                                        PHÒNG</a>
+                                    <a className="nav-link active text-white" aria-current="page" href="/#">ĐỘI NGŨ</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link active text-white" aria-current="page" href="/#">ẨM THỰC</a>
+                                    <a className="nav-link active text-white" aria-current="page" href="/#">KHÁCH HÀNG</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link active text-white" aria-current="page" href="/#">HỘI
-                                        NGHỊ VÀ SỰ KIỆN</a>
+                                    <a className="nav-link active text-white" aria-current="page" href="/#">HỢP ĐỒNG</a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link active text-white" aria-current="page"
-                                       href="/#">SPA</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link active text-white" aria-current="page" href="/#">GIẢI
-                                        TRÍ</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link active text-white" aria-current="page" href="/#">ĐIỂM
-                                        ĐẾN</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link active text-white" aria-current="page" href="/#">ƯU
-                                        ĐÃI</a>
-                                </li>
+
                             </ul>
 
                         </div>
