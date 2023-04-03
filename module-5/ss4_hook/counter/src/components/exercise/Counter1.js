@@ -2,7 +2,7 @@ import useIncrease from "./useIncrease";
 
 export default function Counter1() {
 
-    const [count,increase] = useIncrease(1);
+    const [count,increase] = useIncrease();
     return (
         <>
             <h2>{count}</h2>
