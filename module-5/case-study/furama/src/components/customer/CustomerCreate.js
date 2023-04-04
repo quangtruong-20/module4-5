@@ -1,5 +1,11 @@
- function CustomerCreate() {
-    return(<div id="container">
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
+
+function CustomerCreate() {
+    return(
+        <>
+            <Header/>
+        <div id="container">
 
         <h1 style={{marginLeft: '40%', marginTop: '50px'}}>Tạo mới khách hàng</h1>
 
@@ -63,7 +69,9 @@
                     </div>
             </div>
         </form>
-    </div>)
+    </div>
+        <Footer/>
+        </>)
 }
 
 export default CustomerCreate;

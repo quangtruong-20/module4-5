@@ -1,6 +1,10 @@
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
+
 function FacilityEdit() {
     return (
         <div>
+            <Header/>
             <h1 style={{textAlign: 'center', color: '#0dcaf0'}}>Sửa dịch vụ</h1>
             <div className="row">
                 <div className="col-md-4">
@@ -88,6 +92,7 @@ function FacilityEdit() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>)
 }
 

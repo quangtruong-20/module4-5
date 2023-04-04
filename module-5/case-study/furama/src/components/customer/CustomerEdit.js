@@ -1,6 +1,10 @@
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
+
 function CustomerEdit() {
     return(
-
+    <>
+        <Header/>
         <div id="container">
         <h1 style={{marginLeft: '40%', marginTop: '50px'}}>Chỉnh sửa thông tin khách hàng</h1>
 
@@ -54,12 +58,14 @@ function CustomerEdit() {
                     </div>
 
                 </div>
-                <div style={{textAlign: center}}>
+                <div style={{textAlign: 'center'}}>
                     <input type="submit" value="Save" className="m-3 btn btn-info animationTop delay-19"/>
                     </div>
             </div>
         </form>
-    </div>)
+    </div>
+        <Footer/>
+    </>)
 }
 
 export default CustomerEdit;

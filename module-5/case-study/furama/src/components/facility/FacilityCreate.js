@@ -1,6 +1,10 @@
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
+
 function FacilityCreate() {
     return (
         <div>
+            <Header/>
             <h1 style={{textAlign:'center',color: '#0dcaf0'}}>Tạo mới dịch vụ</h1>
             <div className="row">
                 <div className="col-md-4">
@@ -87,6 +91,7 @@ function FacilityCreate() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
             )}
 
