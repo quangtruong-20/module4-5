@@ -1,6 +1,6 @@
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import * as Yup from 'yup';
-import {Audio, TailSpin} from 'react-loader-spinner'
+import {TailSpin} from 'react-loader-spinner'
 import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 export default function Medical() {
@@ -9,8 +9,8 @@ export default function Medical() {
 
         <>
             <div className='container'>
-            <Formik initialValues={{name:'',cmnd:'',year:'',gender:'',nationality:'',company:'',part:'',insurance:'',
-                conscious:'',district:'',commune:'',house:'',phone:'',email:'',go:'',sick:'',contact:''}}
+            <Formik initialValues={{name:'',cmnd:'',year:'',gender:'',nationality:'',company:'',part:'',insurance:false,
+                conscious:'',district:'',commune:'',house:'',phone:'',email:'',go:'',sick:[],contact:[]}}
                     validationSchema={Yup.object({
                         name : Yup.string().required('Required.'),
                         cmnd : Yup.string().required('Required.'),
@@ -120,12 +120,46 @@ export default function Medical() {
                     <Field type="text" name="go" component='textArea' id="go" className="form-control" />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="go"><b>Trong vòng 14 ngày qua,Anh/Chị có thấy xuất hiện dấu hiệu nào sau đây không ?</b></label>
-                        <Field type="text" name="sick" component='textArea' id="sick" className="form-control" />
+                        <p ><b>Trong vòng 14 ngày qua,Anh/Chị có thấy xuất hiện dấu hiệu nào sau đây không ?</b></p>
+                        <div>
+                        <Field type="checkbox" name="sick" value={"Sốt"} id="sick"  />
+                            <label htmlFor="sick">Sốt</label>
+                        </div>
+                        <div>
+                            <Field type="checkbox" name="sick" value={"Ho"} id="sick"  />
+                            <label htmlFor="sick">Ho</label>
+                        </div>
+                        <div>
+                            <Field type="checkbox" name="sick" value={"Khó thở"} id="sick"  />
+                            <label htmlFor="sick">Khó thở</label>
+                        </div>
+                        <div>
+                            <Field type="checkbox" name="sick" value={"Viêm phổi"} id="sick"  />
+                            <label htmlFor="sick">Viêm phổi</label>
+                        </div>
+                        <div>
+                            <Field type="checkbox" name="sick" value={"Đau họng"} id="sick"  />
+                            <label htmlFor="sick">Đau họng</label>
+                        </div>
+                        <div>
+                            <Field type="checkbox" name="sick" value={"Mệt mỏi"} id="sick"  />
+                            <label htmlFor="sick">Mệt mỏi</label>
+                        </div>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="go"><b>Trong vòng 14 ngày qua,Anh/Chị có tiếp súc với?</b></label>
-                        <Field type="text" name="contact" component='textArea' id="contact" className="form-control" />
+                        <p ><b>Trong vòng 14 ngày qua,Anh/Chị có tiếp súc với?</b></p>
+                        <div>
+                            <Field type="checkbox" name="sick" value={"Người bệnh hoặc nghi ngờ, mắc bệnh COVID-19"} id="contact"  />
+                            <label htmlFor="contact">Người bệnh hoặc nghi ngờ, mắc bệnh COVID-19</label>
+                        </div>
+                        <div>
+                            <Field type="checkbox" name="sick" value={"Người từ nước có bệnh COVID-19"} id="contact"  />
+                            <label htmlFor="contact">Người từ nước có bệnh COVID-19</label>
+                        </div>
+                        <div>
+                            <Field type="checkbox" name="sick" value={"Người có biểu hiện (Sốt, ho, khó thở, viêm phổi)"} id="contact"  />
+                            <label htmlFor="contact">Người có biểu hiện (Sốt, ho, khó thở, viêm phổi)</label>
+                        </div>
                     </div>
                     {
                         isSubmitting ?

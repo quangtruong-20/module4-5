@@ -1,5 +1,5 @@
 import './App.css';
-import './home.css';
+import './components/home/home.css';
 import "bootstrap/dist/css/bootstrap.css"
 
 import CustomerList from "./components/customer/CustomerList";

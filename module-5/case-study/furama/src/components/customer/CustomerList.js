@@ -1,28 +1,8 @@
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import customerList from "./Customer";
 
-const customerList = [
-        {
-            name: "abc",
-            dateOfBirth: "2020/12/12",
-            gender: "nam",
-            identityNumb: "00956",
-            phoneNumb: "090123",
-            email: "123@gmail.com",
-            type: "Diamond",
-            address: "abc",
-        },
-        {
-            name: "abc",
-            dateOfBirth: "2020/12/12",
-            gender: "nam",
-            identityNumb: "00956",
-            phoneNumb: "090123",
-            email: "123@gmail.com",
-            type: "Diamond",
-            address: "abc",
-        },
-    ];
+
     let stt = 1;
 function CustomerList() {
 
