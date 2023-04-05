@@ -60,8 +60,7 @@ export default function List() {
                             <button type={'button'} className={'btn btn-danger'}
                                     onClick={() => handleDelete(value.id)}>Delete</button>
                             <button type={'button'} className={'btn btn-warning ms-2'}
-                                    onClick={() => handleUpdate(index)}>Update
-                            </button>
+                                    onClick={() => handleUpdate(value.id)}>Update</button>
                         </td>
                     </tr>
                 ))}
