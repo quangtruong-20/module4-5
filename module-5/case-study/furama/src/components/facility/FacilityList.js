@@ -1,6 +1,7 @@
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import facilityList from "./Facility";
+import {NavLink} from "react-router-dom";
 
 
 function FacilityList() {
@@ -19,13 +20,13 @@ function FacilityList() {
 
                     {/*them moi*/}
                     <div className="element-button mb-5">
-                        <a
+                        <NavLink
                             className="btn btn-add btn-sm bg-success text-white"
                             href="add-form-facilities.html"
-                        >
+                         to={'/create-facility'}>
                             <i className="fas fa-plus"></i>
                             Tạo mới dịch vụ
-                        </a>
+                        </NavLink>
                     </div>
                     {/*card*/}
                     <div className="row">
@@ -49,14 +50,16 @@ function FacilityList() {
                                             data-target="#exampleModal"
                                             style={{marginLeft: '104px', marginRight: '14px'}}
                                         >
-                                            <i className="fas fa-trash-alt">Xóa</i>
+                                            <i className="fas fa-trash-alt"></i>
                                         </button>
+                                        <NavLink to={'/edit-facility/:id'}>
                                         <button
                                             className="btn btn-primary btn-sm"
-                                            href="edit-form-facilities.html"
+
                                         >
-                                            <i className="fas fa-edit">Sửa</i>
+                                            <i className="fas fa-edit"></i>
                                         </button>
+                                        </NavLink>
                                     </div>
                                 </div>
                             </div>

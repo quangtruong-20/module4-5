@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.css"
-import FacilityList from "../facility/FacilityList";
+import {NavLink} from "react-router-dom";
+
 function Header() {
     return(
         <div>
@@ -8,9 +9,9 @@ function Header() {
             <div className="row">
                 <nav className="navbar navbar-expand-lg navbar-light " id="header-nav">
                     <div className="container-fluid">
-                        <a className="navbar-brand" href="/#"><img
+                        <NavLink className="navbar-brand"  to={'/'}><img
                             src="https://furamavietnam.com/wp-content/uploads/2018/08/logo@2x.png" alt=""
-                            style={{height: 60}}/></a>
+                            style={{height: 60}}/></NavLink>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
                                 aria-label="Toggle navigation">
@@ -20,17 +21,17 @@ function Header() {
                             <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
                                 >
                                 <li className="nav-item">
-                                    <a className="nav-link active text-white" aria-current="page" href="facility-list.html">
-                                      DỊCH VỤ </a>
+                                    <NavLink className="nav-link active text-white" aria-current="page"  to={'/facility'}>
+                                      DỊCH VỤ </NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link active text-white" aria-current="page" href="/#">ĐỘI NGŨ</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link active text-white" aria-current="page" href="/#">KHÁCH HÀNG</a>
+                                    <NavLink className="nav-link active text-white" aria-current="page"  to={'/customer'}>KHÁCH HÀNG</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link active text-white" aria-current="page" href="/#">HỢP ĐỒNG</a>
+                                    <NavLink className="nav-link active text-white" aria-current="page"  to={'/contract'}>HỢP ĐỒNG</NavLink>
                                 </li>
 
                             </ul>
@@ -41,6 +42,8 @@ function Header() {
             </div>
         </div>
     </header>
+
+
         </div>)}
 
 export default Header;

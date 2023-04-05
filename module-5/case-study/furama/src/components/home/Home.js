@@ -45,6 +45,7 @@ function Home() {
                 </div>
 
                 <div className="col-4">
+                    {/* eslint-disable-next-line jsx-a11y/iframe-has-title */}
                     <iframe width="370" height="278.98"
                             src="https://www.youtube.com/embed/Pa8tN0u0Rr0">
                     </iframe>

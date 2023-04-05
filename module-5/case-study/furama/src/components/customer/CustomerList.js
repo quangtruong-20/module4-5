@@ -1,6 +1,7 @@
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import customerList from "./Customer";
+import {NavLink} from "react-router-dom";
 
 
     let stt = 1;
@@ -11,6 +12,12 @@ function CustomerList() {
            <Header/>
         <div className="p-3">
             <h2 className="text-center fw-bold my-3">DANH SÁCH KHÁCH HÀNG</h2>
+
+            <NavLink to={'/create-customer'}>
+                <button className="btn btn-primary btn-outline-secondary btn-sm" >
+                    <span className="text-light"> Thêm mới khách hàng</span>
+                </button>
+            </NavLink>
 
             <table className="table table-bordered">
                 <thead>
@@ -51,12 +58,11 @@ function CustomerList() {
                             </button>
                             </td>
                         <td>
-                            <a
+                            <NavLink
                                 className="btn btn-primary btn-sm edit"
-                                href="/"
-                            >
+                                to={'/edit-customer/:id'}>
                                 <i className="fas fa-edit"></i>
-                            </a>
+                            </NavLink>
                         </td>
                     </tr>
                 ))}
