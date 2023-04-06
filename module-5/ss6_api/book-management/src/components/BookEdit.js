@@ -5,7 +5,7 @@ import {toast} from "react-toastify";
 import {TailSpin} from "react-loader-spinner";
 import {useEffect, useState} from "react";
 
-export default function Edit() {
+export default function BookEdit() {
     const navigate = useNavigate();
     const { id } = useParams();
     const [book, setBook] = useState(null);

@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom";
 import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function List() {
+export default function BookList() {
     const [book, setBook] = useState([]);
     const navigate = useNavigate();
     useEffect(() => {

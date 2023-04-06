@@ -4,7 +4,7 @@ import * as bookService from '../service/bookService';
 import {toast} from "react-toastify";
 import {TailSpin} from "react-loader-spinner";
 
-export default function Create() {
+export default function BookCreate() {
     let navigate = useNavigate()
     return (
         <>

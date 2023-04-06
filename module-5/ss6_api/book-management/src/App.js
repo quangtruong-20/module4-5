@@ -1,17 +1,16 @@
 import './App.css';
-import List from "./components/List";
+import BookList from "./components/BookList";
 import {Route, Routes} from "react-router-dom";
-import Create from "./components/Create";
-import Edit from "./components/Edit";
+import BookCreate from "./components/BookCreate";
+import BookEdit from "./components/BookEdit";
 
 function App() {
   return (
    <>
-       {/*<NavLink to={'/'}>List</NavLink>*/}
        <Routes>
-           <Route path={'/'} element={<List/>} />
-           <Route path={'/create'} element={<Create/>} />
-           <Route path={'/update/:id'} element={<Edit/>} />
+           <Route path={'/'} element={<BookList/>} />
+           <Route path={'/create'} element={<BookCreate/>} />
+           <Route path={'/update/:id'} element={<BookEdit/>} />
        </Routes>
        
    </>

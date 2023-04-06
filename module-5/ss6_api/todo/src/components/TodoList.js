@@ -1,19 +1,19 @@
 import {useEffect, useState} from "react";
-import axios from "axios";
 import {Field, Form, Formik} from "formik";
+import * as todoService from '../service/todoService'
 
 export default function TodoList() {
     const [list, setList] = useState([]);
     useEffect(() => {
-        const fetchApi = async () => {
+        const todoList = async () => {
             try {
-                const result = await axios.get('https://jsonplaceholder.typicode.com/todos');
-                setList(result.data);
+                const result = await todoService.fetchApi()
+                setList(result)
             } catch (err) {
                 console.log(err);
             }
         }
-        fetchApi();
+        todoList();
 
 
     }, []);
@@ -22,9 +22,9 @@ export default function TodoList() {
 
         <>
             <Formik initialValues={{title: ''}} onSubmit={(values) => {
-                const create = async () => {
+                const add = async () => {
                     try {
-                        const result = await axios.post('https://jsonplaceholder.typicode.com/todos', {title: values.title});
+                        const result = await todoService.create(values)
                         setList([...list, result.data]);
                         alert("tạo thành công")
                     } catch (err) {
@@ -32,7 +32,7 @@ export default function TodoList() {
                     }
                 };
 
-                create();
+                add();
 
             }
             }>
