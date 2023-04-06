@@ -10,7 +10,6 @@ export default function BookCreate() {
         <>
             <Formik initialValues={{id: '',title: '', quantity: ''}}
                     onSubmit={(values, {setSubmitting}) => {
-                        setTimeout(() => {
                             const create = async () => {
                                 await bookService.save(values)
                                 console.log(values)
@@ -18,10 +17,7 @@ export default function BookCreate() {
                                 toast('Thêm mới thành công!');
                                 navigate('/')
                             }
-
                             create()
-
-                        }, 500);
                     }
                     }>
                 {({isSubmitting}) => (
