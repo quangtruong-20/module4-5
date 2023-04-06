@@ -8,11 +8,12 @@ export default function Create() {
     let navigate = useNavigate()
     return (
         <>
-            <Formik initialValues={{title: '', quantity: ''}}
+            <Formik initialValues={{id: '',title: '', quantity: ''}}
                     onSubmit={(values, {setSubmitting}) => {
                         setTimeout(() => {
                             const create = async () => {
                                 await bookService.save(values)
+                                console.log(values)
                                 setSubmitting(false);
                                 toast('Thêm mới thành công!');
                                 navigate('/')
@@ -24,7 +25,6 @@ export default function Create() {
                     }
                     }>
                 {({isSubmitting}) => (
-
                     <Form>
                         <h1>Add a new book</h1>
                         <div className="mb-3">

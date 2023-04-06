@@ -36,9 +36,7 @@ export default function List() {
             <div className="element-button mb-5">
                 <NavLink
                     className="btn btn-add btn-sm bg-success text-white"
-                    href="add-form-facilities.html"
                     to={'/create'}>
-                    <i className="fas fa-plus"></i>
                     Add a new book
                 </NavLink>
             </div>
@@ -51,8 +49,7 @@ export default function List() {
                 </tr>
                 </thead>
                 <tbody>
-
-                {book.map((value, index) => (
+                {book?.map((value, index) => (
                     <tr key={index}>
                         <td>{value.title}</td>
                         <td>{value.quantity}</td>

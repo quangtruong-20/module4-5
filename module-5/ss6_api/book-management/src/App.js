@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import List from "./components/List";
-import {NavLink, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import Create from "./components/Create";
 import Edit from "./components/Edit";
 
