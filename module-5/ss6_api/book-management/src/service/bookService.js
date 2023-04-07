@@ -13,7 +13,6 @@ export const findAll = async () => {
 export const findById = async (id) => {
     try{
         const result = await  axios.get(`http://localhost:3000/books/${id}`);
-        console.log(result.data)
         return result.data;
     }catch (err){
         console.log(err);
