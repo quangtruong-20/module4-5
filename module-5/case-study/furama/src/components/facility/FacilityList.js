@@ -30,7 +30,7 @@ function FacilityList() {
                     </div>
                     {/*card*/}
                     <div className="row">
-                        {facilityList.map((facility, index) => (
+                        {facilityList?.map((facility, index) => (
                             <div className="col-4" key={index}>
                                 <div className="card">
                                     <img
@@ -65,37 +65,7 @@ function FacilityList() {
                             </div>
                         ))}
                     </div>
-                    <div className="mt-5">
-                        <nav aria-label="Page navigation example">
-                            <ul className="pagination justify-content-center">
-                                <li className="page-item">
-                                    <a className="page-link" href="#">
-                                        <i className="ti-angle-left"></i>
-                                    </a>
-                                </li>
-                                <li className="page-item">
-                                    <a className="page-link" href="#">
-                                        1
-                                    </a>
-                                </li>
-                                <li className="page-item">
-                                    <a className="page-link" href="#">
-                                        2
-                                    </a>
-                                </li>
-                                <li className="page-item">
-                                    <a className="page-link" href="#">
-                                        3
-                                    </a>
-                                </li>
-                                <li className="page-item">
-                                    <a className="page-link" href="#">
-                                        <i className="ti-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+
                 </div>
             </div>
             <Footer/>

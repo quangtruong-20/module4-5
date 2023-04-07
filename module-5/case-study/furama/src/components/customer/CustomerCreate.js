@@ -1,76 +1,133 @@
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import {ErrorMessage, Field, Form, Formik} from "formik";
+import * as Yup from 'yup';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {TailSpin} from "react-loader-spinner";
 
 function CustomerCreate() {
-    return(
+    return (
         <>
             <Header/>
-        <div id="container">
+            <div id="container">
+                <Formik initialValues={{
+                    name: '', dateOfBirth: '', gender: '', identityNumb: '',
+                    phoneNumb: '', email: '', typeId: '', address: ''
+                }}
+                        validationSchema={Yup.object({
+                            name: Yup.string().required('Required.'),
+                            dateOfBirth: Yup.date().required('Required.'),
+                            identityNumb: Yup.number().required('Required.'),
+                            phoneNumb: Yup.number().required('Required.'),
+                            address: Yup.string().required('Required.'),
+                            email: Yup.string().required('Required.').email('Invalid email address'),
+                        })}
+                        onSubmit={(values, {setSubmitting}) => {
+                            setSubmitting(false);
+                            toast("create success!");
+                        }
+                        }>
+                    {({isSubmitting}) => (
+                        <Form className="form" style={{textAlign: 'center'}}>
 
-        <h1 style={{marginLeft: '40%', marginTop: '50px'}}>Tạo mới khách hàng</h1>
 
-        <form className="form" style={{textAlign: 'center'}}>
-            <div style={{marginRight: '500px', marginLeft: '500px', color: 'white'}}>
-                <div>
-                    <label className="form-label animationTop delay-03">Customer Name:</label>
-                    <input className="form-control animationTop delay-04" type="text" placeholder="Customer Name"
-                    />
-                </div>
+                            <h1 style={{marginLeft: '40%', marginTop: '50px'}}>Tạo mới khách hàng</h1>
 
-                <div>
-                    <label className="form-label animationTop delay-05"> Day Of Birth :</label>
-                    <input className="form-control animationTop delay-06" type="date" placeholder="Date Of Birth"
-                    />
-                    <div>
-                        <label className="form-label animationTop delay-07">Gender :</label>
-                        <select style={{fontSize: '15px', textAlign: 'center'}} className="animationTop delay-08">
-                            <option value="">Gender:</option>
-                            <option value="1">Male</option>
-                            <option value="0">Female</option>
-                            <option value="2">Other</option>
-                        </select>
-                    </div>
+                            <div style={{marginRight: '500px', marginLeft: '500px', color: 'white'}}>
+                                <div>
+                                    <label className="form-label animationTop delay-03">Customer Name:</label>
+                                    <Field className="form-control animationTop delay-04" type="text" name={'name'}
+                                    />
+                                    <ErrorMessage name='name' component='span' className='form-err'/>
+                                </div>
 
-                    <div>
-                        <label className="form-label animationTop delay-08">ID Card :</label>
+                                <div>
+                                    <label className="form-label animationTop delay-05"> Day Of Birth :</label>
+                                    <Field className="form-control animationTop delay-06" type="date"
+                                           name={'dateOfBirth'}
+                                    />
+                                    <ErrorMessage name='dateOfBirth' component='span' className='form-err'/>
+                                    <div>
+                                        <label className="form-label animationTop delay-07">Gender :</label>
+                                        <select style={{fontSize: '15px', textAlign: 'center'}} name={'gender'}
+                                                value={'gender'} className="animationTop delay-08">
+                                            <option value="">Gender:</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
 
-                        <input className="form-control animationTop delay-09" type="text" placeholder="ID Card"/>
-                    </div>
+                                    <div>
+                                        <label className="form-label animationTop delay-08">ID Card :</label>
+                                        <Field className="form-control animationTop delay-09" type="text"
+                                               name={'identityNumb'}/>
+                                        <ErrorMessage name='identityNumb' component='span' className='form-err'/>
+                                    </div>
 
-                    <div>
-                        <label className="form-label animationTop delay-11">Phone Number :</label>
+                                    <div>
+                                        <label className="form-label animationTop delay-11">Phone Number :</label>
+                                        <Field className="form-control animationTop delay-12" type="text"
+                                               name={'phoneNumb'}
 
-                        <input className="form-control animationTop delay-12" type="text" placeholder="Phone Number"
-                        />
-                    </div>
+                                        />
+                                        <ErrorMessage name='phoneNumb' component='span' className='form-err'/>
+                                    </div>
 
-                    <div>
-                        <label className="form-label animationTop delay-13">Email :</label>
+                                    <div>
+                                        <label className="form-label animationTop delay-13">Email :</label>
+                                        <Field className="form-control animationTop delay-14" type="text"
+                                               name={'email'}/>
+                                        <ErrorMessage name='email' component='span' className='form-err'/>
+                                    </div>
 
-                        <input className="form-control animationTop delay-14" type="text" placeholder="Email"/>
-                    </div>
+                                    <div>
+                                        <label className="form-label animationTop delay-15">Address :</label>
+                                        <Field className="form-control animationTop delay-16" type="text"
+                                               name={'address'}/>
+                                        <ErrorMessage name='address' component='span' className='form-err'/>
+                                    </div>
 
-                    <div>
-                        <label className="form-label animationTop delay-15">Address :</label>
+                                    <div>
+                                        <label className="form-label animationTop delay-17">Customer Type :</label>
+                                        <select style={{fontSize: '15px'}} className="animationTop delay-18"
+                                                name={'typeId'}>
+                                            <option value="">Customer type :</option>
+                                            <option value="1">Diamond</option>
+                                            <option value="2">Gold</option>
+                                            <option value="3">Platinum</option>
+                                        </select>
+                                    </div>
 
-                        <input className="form-control animationTop delay-16" type="text" placeholder="Address"/>
-                    </div>
+                                </div>
 
-                    <div>
-                        <label className="form-label animationTop delay-17">Customer Type :</label>
-                        <select style={{fontSize: '15px'}} className="animationTop delay-18">
-                            <option value="">Customer type :</option>
-                        </select>
-                    </div>
+                            </div>
+                            {
+                                isSubmitting ?
+                                    <TailSpin
+                                        height="80"
+                                        width="80"
+                                        color="#4fa94d"
+                                        ariaLabel="tail-spin-loading"
+                                        radius="1"
+                                        wrapperStyle={{}}
+                                        wrapperClass=""
+                                        visible={true}
+                                    />
+                                    :
+                                    <button style={{textAlign: 'center'}} type="submit"
+                                            className="m-3 btn btn-info animationTop delay-19">Submit</button>
+                            }
 
-                </div>
-                <div style={{textAlign: 'center'}}>
-                    <input type="submit" value="Save" className="m-3 btn btn-info animationTop delay-19"/>
-                    </div>
+                        </Form>
+                    )}
+                </Formik>
+
+
             </div>
-        </form>
-    </div>
-        <Footer/>
+            <Footer/>
+            <ToastContainer/>
         </>)
 }
 
