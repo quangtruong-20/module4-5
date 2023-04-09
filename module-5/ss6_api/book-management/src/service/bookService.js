@@ -10,6 +10,15 @@ export const findAll = async () => {
     }
 }
 
+export const getAllBookType = async () => {
+    try{
+        const result = await  axios.get('http://localhost:3000/bookType');
+        return result.data;
+    }catch (err){
+        console.log(err);
+    }
+}
+
 export const findById = async (id) => {
     try{
         const result = await  axios.get(`http://localhost:3000/books/${id}`);

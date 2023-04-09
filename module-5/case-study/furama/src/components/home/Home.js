@@ -6,17 +6,18 @@ import "bootstrap/dist/css/bootstrap.css"
 function Home() {
     return(
         <>
+
         <Header></Header>
             <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel" style={{marginBottom: '34px'}}>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src="https://furamavietnam.com/wp-content/uploads/2018/07/Vietnam_Danang_Furama_Resort_Exterior-Furama-girl-with-pink-hat.jpg" className="d-block w-100" alt="..."/>
+                        <img src="https://furamavietnam.com/wp-content/uploads/2018/07/Vietnam_Danang_Furama_Resort_Exterior-Furama-girl-with-pink-hat.jpg" className="d-block w-100" />
                     </div>
                     <div className="carousel-item">
-                        <img src="https://hongngocha.com/wp-content/uploads/2019/05/Vietnam_Danang_Furama_Resort.jpg" className="d-block w-100" alt="..."/>
+                        <img src="https://hongngocha.com/wp-content/uploads/2019/05/Vietnam_Danang_Furama_Resort.jpg" className="d-block w-100" />
                     </div>
                     <div className="carousel-item">
-                        <img src="https://danangfantasticity.com/wp-content/uploads/2021/02/Furama-resort-danang-103-105-vo-nguyen-giap-da-nang-ocean-view.jpg" className="d-block w-100" alt="..."/>
+                        <img src="https://danangfantasticity.com/wp-content/uploads/2021/02/Furama-resort-danang-103-105-vo-nguyen-giap-da-nang-ocean-view.jpg" className="d-block w-100" />
                     </div>
                 </div>
                 <div className="card-img-overlay">

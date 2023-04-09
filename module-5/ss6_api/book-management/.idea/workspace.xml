@@ -1,11 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="239ed3f6-6916-4dcb-97ab-fc461a9645b5" name="Changes" comment="" />
+    <list default="true" id="239ed3f6-6916-4dcb-97ab-fc461a9645b5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/components/contract/ContractCreate.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/src/components/contract/ContractCreate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/components/contract/ContractList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/src/components/contract/ContractList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/components/customer/CustomerCreate.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/src/components/customer/CustomerCreate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/components/customer/CustomerEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/src/components/customer/CustomerEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/components/customer/CustomerList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/src/components/customer/CustomerList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/components/facility/FacilityCreate.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/src/components/facility/FacilityCreate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/components/facility/FacilityEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/src/components/facility/FacilityEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/components/facility/FacilityList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/src/components/facility/FacilityList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/src/components/header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/components/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/src/components/home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/src/components/home/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/prototype/contract/contract-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/prototype/contract/contract-create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/prototype/contract/contract-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/prototype/contract/contract-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/prototype/customer/customer-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/prototype/customer/customer-create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/prototype/customer/customer-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/prototype/customer/customer-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/prototype/customer/customer-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/prototype/customer/customer-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/prototype/facility/facility-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/prototype/facility/facility-create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/prototype/facility/facility-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/prototype/facility/facility-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/prototype/facility/facility-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/prototype/facility/facility-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/prototype/footer/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/prototype/footer/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/prototype/header/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/prototype/header/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama/src/prototype/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../case-study/furama/prototype/home/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/text/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-with-webpack/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-with-webpack/.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-with-webpack/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-with-webpack/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-with-webpack/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-with-webpack/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss4_hook/counter/src/components/exercise/Counter1.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss4_hook/counter/src/components/exercise/Counter1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss4_hook/counter/src/components/exercise/Counter2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss4_hook/counter/src/components/exercise/Counter2.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -16,16 +57,48 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/module_4_5/module4-5/module-5/ss6_api/book-management",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/module_4_5/module4-5/module-5/ss6_api/book-management&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="npm.json-server">
+    <configuration name="json-server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="json-server" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.json-server" />
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -35,7 +108,11 @@
       <option name="presentableId" value="Default" />
       <updated>1680796077869</updated>
       <workItem from="1680796079217" duration="3000" />
+      <workItem from="1680947853862" duration="9737000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

@@ -7,6 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function BookList() {
     const [book, setBook] = useState([]);
+    const [bookType, setBookType] = useState([]);
+
     const navigate = useNavigate();
     useEffect(() => {
         const fetchApi = async () => {
@@ -40,11 +42,14 @@ export default function BookList() {
                     Add a new book
                 </NavLink>
             </div>
+            {book.length > 0 ? (
             <table className="table table-striped table-inverse table-responsive">
                 <thead className="thead-inverse">
+
                 <tr>
                     <th>Title</th>
                     <th>Quantity</th>
+                    <th>Type</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -53,6 +58,10 @@ export default function BookList() {
                     <tr key={index}>
                         <td>{value.title}</td>
                         <td>{value.quantity}</td>
+                        <td>{value.bookType && Array.isArray(value.bookType) && value.bookType.map((data, index) => (
+                            <span key={index} >{data.name}</span>
+                        ))}</td>
+
                         <td>
                             <button type={'button'} className={'btn btn-danger'}
                                     onClick={() => handleDelete(value.id)}>Delete</button>
@@ -62,7 +71,9 @@ export default function BookList() {
                     </tr>
                 ))}
                 </tbody>
-            </table>
+            </table>) : (
+                <p>No books available.</p>
+            )}
             <ToastContainer/>
         </>
     )
