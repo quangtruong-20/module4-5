@@ -1,13 +1,40 @@
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import customerList from "../../data/Customer";
 import {NavLink} from "react-router-dom";
-
-
-let stt = 1;
+import ModalDelete from "../modal/modalDelete";
+import {useEffect, useState} from "react";
+import customerService from "../../service/customer/customerService";
 
 function CustomerList() {
+    const [customerList, setCustomerList] = useState([]);
+    const [customerType, setCustomerType] = useState([]);
+    const [deletedId, setDeleteId] = useState(0);
+    const [deletedName, setDeleteName] = useState("");
+    const [deletedType, setDeleteType] = useState("");
 
+    useEffect(() => {
+        getCustomerList();
+        getCustomerTypeList();
+    }, []);
+
+    const getCustomerList = async () => {
+        const customerData = await customerService.findAll();
+        console.log(customerData)
+        setCustomerList(customerData);
+    };
+
+    const getCustomerTypeList = async () => {
+        const customerTypeData = await customerService.getAllCustomerType();
+        setCustomerType(customerTypeData);
+    };
+
+
+
+    const transferInfo = (id, name, type) => {
+        setDeleteId(id);
+        setDeleteName(name);
+        setDeleteType(type);
+    };
     return (
         <>
             <Header/>
@@ -32,28 +59,36 @@ function CustomerList() {
                         <th>Email</th>
                         <th>Địa chỉ</th>
                         <th>Loại khách</th>
-                        <th className="text-center">Sửa</th>
-                        <th className="text-center">Xóa</th>
+                        <th >Chức năng</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {customerList.map((customer, index) => (
+                    {customerList?.map((customer, index) => (
                         <tr key={index}>
-                            <th scope="row">{stt++}</th>
+                            <th scope="row">{++index}</th>
                             <td>{customer.name}</td>
-                            <td>{customer.gender}</td>
+                            <td>{parseInt(customer.gender) === 0 ? "nam" : "nữ"}</td>
                             <td>{customer.dateOfBirth}</td>
                             <td>{customer.identityNumb}</td>
                             <td>{customer.phoneNumb}</td>
                             <td>{customer.email}</td>
                             <td>{customer.address}</td>
-                            <td>{customer.type}</td>
+                            <td>  {
+                                customerType?.filter(ct => ct.id === customer.customerTypes)[0]?.name
+                            }</td>
                             <td>
                                 <button
                                     type="button"
                                     className="btn btn-danger"
                                     data-toggle="modal"
                                     data-target="#exampleModal"
+                                    onClick={() =>
+                                        transferInfo(
+                                            customer.id,
+                                            customer.name,
+                                            customer.customer
+                                        )
+                                    }
                                 >
                                     <i className="fas fa-trash-alt"></i>
                                 </button>
@@ -70,6 +105,14 @@ function CustomerList() {
                     </tbody>
                 </table>
             </div>
+            <ModalDelete
+                id={deletedId}
+                name={deletedName}
+                type={deletedType}
+                getList={() => {
+                    getCustomerList();
+                }}
+            />
             <Footer/>
         </>
 
