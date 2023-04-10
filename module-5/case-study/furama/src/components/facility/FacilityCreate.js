@@ -33,68 +33,64 @@ export default function FacilityCreate() {
                     }}>
                 {({isSubmitting}) => (
                     <Form>
-                        <h1 style={{textAlign: 'center', color: '#0dcaf0'}}>Tạo mới dịch vụ</h1>
-
-                        <div className="row">
-                            <div className="col-md-4">
-                                <button className="btn btn-outline-primary">Danh sách</button>
-                            </div>
-                            <div className="col-md-8">
-                                <div style={{textAlign: 'center', justifyContent: 'center'}}>
+                        <div className="text-center pt-5">
+                            <h2>Tạo mới dịch vụ</h2>
+                        </div>
+                            <div className="card container bg-transparent">
+                                <div className="card-body">
                                     <form>
-                                        <div className="col-md-6">
-                                            <label>Facility Type:</label>
-                                            <label className="form-label">
-                                                <select className="form-select" name={'facilityTypeId'}>
+                                        <div className="form-group">
+                                          
+                                            <label htmlFor="inputFacility">Facility Type:</label>
+                                                <select id="inputFacility" className="form-select" name={'facilityTypeId'}>
                                                     <option value={''}>Vui lòng chọn kiểu dịch vụ</option>
                                                     <option value={'Diamond'}>Diamond</option>
                                                     <option value={'Platinium'}>Platinium</option>
                                                     <option value={'Gold'}>Gold</option>
                                                     <option value={'Silver'}>Silver</option>
-
                                                 </select>
-                                            </label>
+
 
                                         </div>
 
-                                        <div className="col-md-6" style={{textAlign: 'center'}}>
-                                            <label className="form-label" >Name:</label>
-                                            <Field className="form-control" type="text"  name='name' />
+                                        <div className="form-group" >
+                                            <label className="inputName">Name:</label>
+                                            <Field  placeholder="Facility name" className="form-control" id="inputName" type="text" name='name'/>
                                             <ErrorMessage name='name' component='span' className='form-err'/>
                                         </div>
-                                        <div className="col-md-6">
-                                            <label >Area:</label>
-                                            <Field className="form-control" type="text" name='area' />
+                                        <div className="form-group">
+                                            <label>Area:</label>
+                                            <Field placeholder="Enter area" className="form-control" type="text" name='area'/>
                                             <ErrorMessage name='area' component='span' className='form-err'/>
                                         </div>
-                                        <div className="col-md-6">
+                                        <div className="form-group">
                                             <label>Img:</label>
                                             <Field className="form-control" type="text"
                                                    placeholder="dán link ảnh bạn muốn" name='img'/>
                                             <ErrorMessage name='img' component='span' className='form-err'/>
                                         </div>
 
-                                        <div className="col-md-6">
+                                        <div className="form-group">
                                             <label>Cost:</label>
                                             <Field className="form-control" type="number" name="price"/>
                                             <ErrorMessage name='price' component='span' className='form-err'/>
 
                                         </div>
-                                        <div className="col-md-6">
+                                        <div className="form-group">
                                             <label>Max People:</label>
                                             <Field className="form-control" type="number" name="maxPeople"/>
                                             <ErrorMessage name='maxPeople' component='span' className='form-err'/>
 
 
                                         </div>
-                                        <div className="col-md-6">
-                                            <label >standardRoom:</label>
+                                        <div className="form-group">
+                                            <label>standardRoom:</label>
                                             <Field className="form-control" type="number" name="standardRoom"/>
                                             <ErrorMessage name='standardRoom' component='span' className='form-err'/>
 
                                         </div>
 
-                                        <div className="col-md-6">
+                                        <div className="form-group">
                                             <label className="form-label">Rent Type:</label>
                                             <label>
                                                 <select className="form-select">
@@ -106,7 +102,7 @@ export default function FacilityCreate() {
                                             </label>
 
                                         </div>
-                                        <div className="col-md-6">
+                                        <div className="form-group">
                                             <label className="form-label"
                                             >Description:</label>
                                             <Field className="form-control" type="text" name='otherAmenities'
@@ -114,7 +110,7 @@ export default function FacilityCreate() {
                                             <ErrorMessage name='otherAmenities' component='span' className='form-err'/>
 
                                         </div>
-                                        <div className="col-md-6"
+                                        <div className="form-group"
                                         >
                                             <label className="form-label">Area of pool:</label>
                                             <Field
@@ -124,7 +120,7 @@ export default function FacilityCreate() {
 
                                         </div>
 
-                                        <div className="col-md-6"
+                                        <div className="form-group"
                                         >
                                             <label className="form-label">Number of Floors:</label>
                                             <Field className="form-control" type="number"
@@ -133,7 +129,7 @@ export default function FacilityCreate() {
 
                                         </div>
                                         <div>
-                                            <p className="col-md-6">
+                                            <p className="form-group">
                                                 <label className="form-label" for="attachFacility">Attach
                                                     Facility:</label>
                                                 <Field className="form-control" type="text" name="facilityFree"/>
@@ -162,7 +158,6 @@ export default function FacilityCreate() {
                                     </form>
                                 </div>
                             </div>
-                        </div>
                     </Form>)}
 
             </Formik>

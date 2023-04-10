@@ -19,11 +19,15 @@ export default function BookCreate() {
     return (
         <>
             
-            <Formik initialValues={{id: '',title: '', quantity: '', bookType: [{ id: 1 }]}}
+            <Formik initialValues={{id: '',title: '', quantity: '', bookType: null}}
                     onSubmit={(values, {setSubmitting}) => {
                             const create = async () => {
-                                await bookService.save(values)
-                                console.log(values)
+                                const data = {
+                                    ...values,
+                                    bookType: +values.bookType
+                                }
+                                await bookService.save(data)
+                                console.log(data)
                                 setSubmitting(false);
                                 toast('Thêm mới thành công!');
                                 navigate('/')
@@ -43,15 +47,10 @@ export default function BookCreate() {
                             <Field type="number" name="quantity" id="quantity" className="form-control"/>
                         </div>
                         <div className="mb-3">
-                            <Field
-                                as="select"
-                                className="form-control"
-                                name="bookType"
-                                component="select"
-                            >
+                            <Field as="select" className="form-control" name="bookType" component="select">
                                 <option value="">Select Book Type</option>
                                 {bookTypes.map((bookType) => (
-                                    <option key={bookType.id} value={bookType.id}>
+                                    <option  value={bookType.id}>
                                         {bookType.name}
                                     </option>
                                 ))}

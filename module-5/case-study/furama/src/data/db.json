@@ -1,0 +1,155 @@
+{
+  "customers": [
+    {
+      "name": "Thai Quang Truong",
+      "dateOfBirth": "2020/12/12",
+      "gender": "nam",
+      "identityNumb": "01253",
+      "phoneNumb": "090123",
+      "email": "123@gmail.com",
+      "typeId": 1,
+      "address": "abc"
+    },
+    {
+      "name": "Thai Quang Truong",
+      "dateOfBirth": "2020/12/12",
+      "gender": "nam",
+      "identityNumb": "01253",
+      "phoneNumb": "090123",
+      "email": "123@gmail.com",
+      "typeId": 1,
+      "address": "abc"
+    },
+    {
+      "name": "Thai Quang Truong",
+      "dateOfBirth": "2020/12/12",
+      "gender": "nam",
+      "identityNumb": "01253",
+      "phoneNumb": "090123",
+      "email": "123@gmail.com",
+      "typeId": 1,
+      "address": "abc"
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Gold"
+    },
+    {
+      "id": 3,
+      "name": "Platinum"
+    }
+  ],
+  "facility": [
+    {
+      "id": 1,
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-768x497.jpg",
+      "name": "PHÒNG SUITE HƯỚNG BIỂN",
+      "area": "Diện tích phòng: 85.8 m2",
+      "price": "20000",
+      "maxPeople": 4,
+      "rentalType": "Ngày",
+      "facilityTypeId": 1,
+      "standardRoom": "Vip",
+      "otherAmenities": "Karaoke",
+      "poolArea": 6,
+      "numberOfFloors": 5,
+      "facilityFree": "???",
+      "rentType": {
+        "id": 1,
+        "name": "Villa"
+      }
+    },
+    {
+      "id": 2,
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Pool_Villas-F-768x497.jpg",
+      "name": "PHÒNG DELUXE HƯỚNG BIỂN",
+      "area": "Diện tích phòng: 85.8 m2",
+      "price": "20000",
+      "maxPeople": 4,
+      "rentalType": "Ngày",
+      "facilityTypeId": 1,
+      "standardRoom": "Vip",
+      "otherAmenities": "Karaoke",
+      "poolArea": 6,
+      "numberOfFloors": 5,
+      "facilityFree": "???",
+      "rentType": {
+        "id": 1,
+        "name": "Villa"
+      }
+    },
+    {
+      "id": 3,
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas-_Exterior-1-F-768x497.jpg",
+      "name": "PHÒNG SUPERIOR HƯỚNG HỒ",
+      "area": "Diện tích phòng: 85.8 m2",
+      "price": "20000",
+      "maxPeople": 4,
+      "rentalType": "Ngày",
+      "facilityTypeId": 1,
+      "standardRoom": "Vip",
+      "otherAmenities": "Karaoke",
+      "poolArea": 6,
+      "numberOfFloors": 5,
+      "facilityFree": "???",
+      "rentType": {
+        "id": 1,
+        "name": "Villa"
+      }
+    }
+  ],
+  "facilityType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    }
+  ],
+  "rentType": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Phòng"
+    }
+  ],
+  "contracts": [
+    {
+      "contractCode": "HD-1",
+      "startDate": "2020-12-08",
+      "endDate": "2020-13-08",
+      "deposit": "2000000",
+      "totalMoney": "40000000"
+    },
+    {
+      "contractCode": "HD-2",
+      "startDate": "2021-12-08",
+      "endDate": "2021-13-08",
+      "deposit": "1500000",
+      "totalMoney": "30000000"
+    }
+  ]
+}

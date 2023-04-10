@@ -15,7 +15,13 @@ export default function BookList() {
             const result = await bookService.findAll()
             setBook(result);
         }
+
+        const fetchBookType = async () => {
+            const result = await bookService.getAllBookType()
+            setBookType(result);
+        }
         fetchApi()
+        fetchBookType();
     }, [])
 
     const handleUpdate = (id) => {
@@ -58,9 +64,11 @@ export default function BookList() {
                     <tr key={index}>
                         <td>{value.title}</td>
                         <td>{value.quantity}</td>
-                        <td>{value.bookType && Array.isArray(value.bookType) && value.bookType.map((data, index) => (
-                            <span key={index} >{data.name}</span>
-                        ))}</td>
+                        <td>
+                            {
+                                bookType?.filter(bt => bt.id === value.bookType)[0]?.name
+                            }
+                        </td>
 
                         <td>
                             <button type={'button'} className={'btn btn-danger'}

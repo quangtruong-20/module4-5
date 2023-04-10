@@ -1,6 +1,6 @@
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import customerList from "./Customer";
+import customerList from "../../data/Customer";
 import {NavLink} from "react-router-dom";
 
 

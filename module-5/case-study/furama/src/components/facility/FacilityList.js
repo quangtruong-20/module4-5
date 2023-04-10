@@ -1,6 +1,6 @@
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import facilityList from "./Facility";
+import facilityList from "../../data/Facility";
 import {NavLink} from "react-router-dom";
 
 
@@ -18,7 +18,6 @@ function FacilityList() {
 
                 <div className="container">
 
-                    {/*them moi*/}
                     <div className="element-button mb-5">
                         <NavLink
                             className="btn btn-add btn-sm bg-success text-white"
@@ -28,7 +27,6 @@ function FacilityList() {
                             Tạo mới dịch vụ
                         </NavLink>
                     </div>
-                    {/*card*/}
                     <div className="row">
                         {facilityList?.map((facility, index) => (
                             <div className="col-4" key={index}>

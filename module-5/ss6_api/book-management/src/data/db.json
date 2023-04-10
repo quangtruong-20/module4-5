@@ -1,55 +1,16 @@
 {
   "books": [
     {
-      "id": 3,
-      "title": "gg",
-      "quantity": 24,
-      "bookType": [
-        {
-          "id": 1,
-          "name": "Thiếu Nhi"
-        }
-      ]
+      "id": 1,
+      "title": "sdasd",
+      "quantity": 12,
+      "bookType": 1
     },
     {
       "id": 2,
-      "title": "vsgdg",
-      "quantity": 231,
-      "bookType": [
-        {
-          "id": 1,
-          "name": "Thiếu Nhi"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "title": "ewwqrwqr",
-      "quantity": 232111,
-      "bookType": [
-        {
-          "id": 1,
-          "name": "Thiếu Nhi"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "title": "fdhdfgh",
-      "quantity": 2312,
+      "title": "asdfsadf",
+      "quantity": 23423,
       "bookType": 2
-    },
-    {
-      "id": 6,
-      "title": "ưeqe",
-      "quantity": 12123,
-      "bookType": "2"
-    },
-    {
-      "id": 7,
-      "title": "áda",
-      "quantity": 2342,
-      "bookType": "2"
     }
   ],
   "bookType": [

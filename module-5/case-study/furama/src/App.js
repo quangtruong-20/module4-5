@@ -12,6 +12,7 @@ import CustomerCreate from "./components/customer/CustomerCreate";
 import CustomerEdit from "./components/customer/CustomerEdit";
 import FacilityEdit from "./components/facility/FacilityEdit";
 import FacilityCreate from "./components/facility/FacilityCreate";
+import Text from "./components/home/Text";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
                 <Route path={'/edit-customer/:id'} element={<CustomerEdit/>}/>
                 <Route path={'/edit-facility/:id'} element={<FacilityEdit/>}/>
                 <Route path={'/create-facility'} element={<FacilityCreate/>}/>
+                <Route path={'/h'} element={<Text/>}/>
             </Routes>
         </div>
 
