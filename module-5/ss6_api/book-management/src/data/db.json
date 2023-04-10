@@ -2,21 +2,9 @@
   "books": [
     {
       "id": 1,
-      "title": "truong",
-      "quantity": 12,
+      "title": "ấdfsa",
+      "quantity": 233,
       "bookType": 2
-    },
-    {
-      "id": 2,
-      "title": "asdfsadf",
-      "quantity": 23423,
-      "bookType": 2
-    },
-    {
-      "id": 3,
-      "title": "hdsgfdjh",
-      "quantity": 2342,
-      "bookType": 1
     }
   ],
   "bookType": [

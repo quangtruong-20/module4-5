@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const findAll = async () => {
     try{
-        const result = await  axios.get('http://localhost:8080/customers');
+        const result = await  axios.get('http://localhost:8081/customers');
         return result.data;
     }catch (err){
         console.log(err);
