@@ -1,7 +1,7 @@
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import {NavLink} from "react-router-dom";
-import ModalDelete from "../modal/modalDelete";
+import ModalDeleteCustomer from "../modal/modalDeleteCustomer";
 import {useEffect, useState} from "react";
 import customerService from "../../service/customer/customerService";
 
@@ -64,7 +64,7 @@ function CustomerList() {
                         <tr key={index}>
                             <th scope="row">{++index}</th>
                             <td>{customer.name}</td>
-                            <td>{parseInt(customer.gender) === 0 ? "nam" : "nữ"}</td>
+                            <td>{parseInt(customer.gender) === 0 ? "nữ" : "nam"}</td>
                             <td>{customer.dateOfBirth}</td>
                             <td>{customer.identityNumb}</td>
                             <td>{customer.phoneNumb}</td>
@@ -77,8 +77,8 @@ function CustomerList() {
                                 <button
                                     type="button"
                                     className="btn btn-danger"
-                                    data-toggle="modal"
-                                    data-target="#exampleModal"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal"
                                     onClick={() =>
                                         getCustomerInfo(
                                             customer.id,
@@ -102,7 +102,7 @@ function CustomerList() {
                     </tbody>
                 </table>
             </div>
-            <ModalDelete
+            <ModalDeleteCustomer
                 id={deletedId}
                 name={deletedName}
                 getList={() => {

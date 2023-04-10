@@ -16,10 +16,18 @@ export const save = async (contracts) => {
         console.log(err);
     }
 }
+export const remove = async (id) => {
+    try{
+        const result = await  axios.delete(`http://localhost:3000/contracts/${id}`);
+        return result.data;
+    }catch (err){
+        console.log(err);
+    }
+}
 
 const contractService = {
     findAll,
-    save
+    save, remove
 }
 
 export default contractService

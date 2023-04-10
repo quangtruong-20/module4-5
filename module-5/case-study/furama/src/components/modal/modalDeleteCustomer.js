@@ -1,6 +1,6 @@
 import {toast} from "react-toastify";
 import customerService from '../../service/customer/customerService';
-export default function ModalDelete(props) {
+export default function ModalDeleteCustomer(props) {
     const handleDelete = async (id) => {
         try {
             await customerService.delete1(id);
