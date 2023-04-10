@@ -1,21 +1,11 @@
 import {toast} from "react-toastify";
 import customerService from '../../service/customer/customerService';
-import facilityService from '../../service/facility/facilityService';
 export default function ModalDelete(props) {
     const handleDelete = async (id) => {
         try {
-            switch (props.type) {
-                case "customer":
-                    await customerService.delete1(id);
-                    break;
-                case "facility":
-                    await facilityService.delete1(id)
-                    break
-                default:
-                    break;
-            }
-            toast("Xóa thành công");
+            await customerService.delete1(id);
             props.getList();
+            toast("Xóa thành công");
         } catch (error) {
             toast("Xóa thất bại");
         }

@@ -8,7 +8,7 @@
       "identityNumb": "01253",
       "phoneNumb": "090123",
       "email": "123@gmail.com",
-      "customerTypes": 1,
+      "customerTypes": 3,
       "address": "Quang Binh"
     },
     {
@@ -19,7 +19,7 @@
       "identityNumb": "01253",
       "phoneNumb": "090123",
       "email": "123@gmail.com",
-      "customerTypes": 1,
+      "customerTypes": 2,
       "address": "abc"
     },
     {

@@ -10,12 +10,7 @@ function CustomerList() {
     const [customerType, setCustomerType] = useState([]);
     const [deletedId, setDeleteId] = useState(0);
     const [deletedName, setDeleteName] = useState("");
-    const [deletedType, setDeleteType] = useState("");
 
-    useEffect(() => {
-        getCustomerList();
-        getCustomerTypeList();
-    }, []);
 
     const getCustomerList = async () => {
         const customerData = await customerService.findAll();
@@ -28,12 +23,14 @@ function CustomerList() {
         setCustomerType(customerTypeData);
     };
 
+    useEffect(() => {
+        getCustomerList();
+        getCustomerTypeList();
+    }, []);
 
-
-    const transferInfo = (id, name, type) => {
+    const getCustomerInfo = (id, name) => {
         setDeleteId(id);
         setDeleteName(name);
-        setDeleteType(type);
     };
     return (
         <>
@@ -83,14 +80,14 @@ function CustomerList() {
                                     data-toggle="modal"
                                     data-target="#exampleModal"
                                     onClick={() =>
-                                        transferInfo(
+                                        getCustomerInfo(
                                             customer.id,
                                             customer.name,
-                                            customer.customer
                                         )
                                     }
                                 >
-                                    <i className="fas fa-trash-alt"></i>
+                                    {/*<i className="fas fa-trash-alt"></i>*/}
+                                    Xóa
                                 </button>
                             </td>
                             <td>
@@ -108,7 +105,6 @@ function CustomerList() {
             <ModalDelete
                 id={deletedId}
                 name={deletedName}
-                type={deletedType}
                 getList={() => {
                     getCustomerList();
                 }}
