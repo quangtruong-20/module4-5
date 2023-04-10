@@ -22,6 +22,7 @@ export default function BookCreate() {
             <Formik initialValues={{id: '',title: '', quantity: '', bookType: null}}
                     onSubmit={(values, {setSubmitting}) => {
                             const create = async () => {
+                                // chuyển từ string sang số
                                 const data = {
                                     ...values,
                                     bookType: +values.bookType

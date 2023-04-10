@@ -13,11 +13,9 @@ export default function BookEdit() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // Fetch the book data from your book service based on the ID
                 const bookData = await bookService.findById(id);
                 setBook(bookData);
 
-                // Fetch the book types data from your book service
                 const bookTypesData = await bookService.getAllBookType();
                 setBookTypes(bookTypesData);
             } catch (error) {
@@ -30,8 +28,12 @@ export default function BookEdit() {
 
     const handleUpdate = async (values) => {
         try {
-            await bookService.edit(values);
-            console.log(values)
+            const data = {
+                ...values,
+                bookType: +values.bookType
+            }
+            await bookService.edit(data);
+            console.log(data)
             toast('Sửa thành công!');
             navigate('/');
         } catch (err) {
@@ -61,7 +63,7 @@ export default function BookEdit() {
         <>
             <Formik
                 initialValues={{id: book.id, title: book.title, quantity: book.quantity,
-                    bookType:book.bookType.length > 0 ? book.bookType[0].id : ''}}
+                    bookType: book.bookType}}
                 onSubmit={async (values) => {
                     await handleUpdate(values);
                 }}
