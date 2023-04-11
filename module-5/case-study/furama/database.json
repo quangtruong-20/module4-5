@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Thai Quang Truong",
       "dateOfBirth": "2020/12/12",
-      "gender": "nam",
+      "gender": "1",
       "identityNumb": "01253",
       "phoneNumb": "090123",
       "email": "123@gmail.com",
@@ -15,7 +15,7 @@
       "id": 2,
       "name": "Tran Van Duy",
       "dateOfBirth": "2020/12/12",
-      "gender": "nam",
+      "gender": "2",
       "identityNumb": "01253",
       "phoneNumb": "090123",
       "email": "123@gmail.com",
@@ -26,12 +26,23 @@
       "id": 3,
       "name": "Nguyen Van Thanh",
       "dateOfBirth": "2020/12/12",
-      "gender": "nam",
+      "gender": "1",
       "identityNumb": "01253",
       "phoneNumb": "090123",
       "email": "123@gmail.com",
       "customerTypes": 1,
       "address": "abc"
+    },
+    {
+      "id": 6,
+      "name": "Lisandra Colon",
+      "dateOfBirth": "2018-12-07",
+      "gender": "2",
+      "identityNumb": "1231231",
+      "phoneNumb": "12312313",
+      "email": "qodad@mailinator.com",
+      "customerTypes": 4,
+      "address": "Perspiciatis minus "
     }
   ],
   "customerTypes": [
@@ -177,6 +188,36 @@
       "endDate": "2021-13-08",
       "deposit": "1500000",
       "totalMoney": "30000000"
+    },
+    {
+      "contractCode": "Provident vitae vel",
+      "startDate": "1971-05-04",
+      "endDate": "1999-09-10",
+      "deposit": 67,
+      "totalMoney": 82,
+      "id": 3,
+      "customers": "3",
+      "facilities": "2"
+    },
+    {
+      "contractCode": "Magna fugiat aperiam",
+      "startDate": "1976-12-25",
+      "endDate": "1997-02-07",
+      "deposit": 47,
+      "totalMoney": 59,
+      "id": 4,
+      "customers": "1",
+      "facilities": "3"
+    },
+    {
+      "contractCode": "Incidunt dolores ma",
+      "startDate": "1977-06-23",
+      "endDate": "1982-07-11",
+      "deposit": 76,
+      "totalMoney": 71,
+      "id": 5,
+      "customers": "2",
+      "facilities": "2"
     }
   ]
 }

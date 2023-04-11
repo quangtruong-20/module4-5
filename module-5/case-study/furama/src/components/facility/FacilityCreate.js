@@ -33,12 +33,13 @@ export default function FacilityCreate() {
                     }}>
                 {({isSubmitting}) => (
                     <Form>
-                        <div className="text-center pt-5">
-                            <h2>Tạo mới dịch vụ</h2>
+                        <div className="card-header">
+                            <strong id="inDam"><h1 className="card-title"
+                                                   style={{color: 'red', textAlign: "center"}}>Tạo mới dịch vụ</h1>
+                            </strong>
                         </div>
                             <div className="card container bg-transparent">
                                 <div className="card-body">
-                                    <form>
                                         <div className="form-group">
                                           
                                             <label htmlFor="inputFacility">Facility Type:</label>
@@ -155,7 +156,6 @@ export default function FacilityCreate() {
                                                         className="m-3 btn btn-info animationTop delay-19">Submit</button>
                                         }
 
-                                    </form>
                                 </div>
                             </div>
                     </Form>)}

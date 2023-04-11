@@ -1,21 +1,18 @@
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import contractList from "../../data/Contract";
 import {NavLink} from "react-router-dom";
 import {useEffect, useState} from "react";
 import customerService from "../../service/customer/customerService";
 import contractService from "../../service/contract/contractService";
-import ModalDeleteCustomer from "../modal/modalDeleteCustomer";
-import ModalDeleteContract from "../modal/modalDeleteContract";
 import facilityService from "../../service/facility/facilityService";
-
+import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function ContractList() {
     const [contractList, setContractList] = useState([]);
     const [customerList, setCustomerList] = useState([]);
     const [facilitiesList, setFacilitiesList] = useState([]);
-    const [deletedId, setDeleteId] = useState(0);
-    const [deletedName, setDeleteName] = useState("");
+
 
     const getContractList = async () => {
         const contractData = await contractService.findAll();
@@ -39,10 +36,7 @@ function ContractList() {
         getFacilitiesList();
     }, []);
 
-    const getContractInfo = (id, name) => {
-        setDeleteId(id);
-        setDeleteName(name);
-    };
+
 
     return (
         <>
@@ -60,13 +54,12 @@ function ContractList() {
                     <tr>
                         <th className="text-center">#</th>
                         <th>Số hợp đồng</th>
-                        <th >Khách hàng</th>
-                        <th >Dịch vụ</th>
+                        <th>Khách hàng</th>
+                        <th>Tên dịch vụ</th>
                         <th>Ngày bắt đầu</th>
                         <th>Ngày kết thúc</th>
                         <th>Tiền đặt cọc</th>
                         <th>Tổng tiền</th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -92,35 +85,15 @@ function ContractList() {
                             <td>{contract.endDate}</td>
                             <td>{contract.deposit}</td>
                             <td>{contract.totalMoney}</td>
-                            <th>
-                                <button
-                                    type="button"
-                                    className="btn btn-danger"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal"
-                                    onClick={() =>
-                                        getContractInfo(
-                                            contract.id,
-                                            contract.name,
-                                        )
-                                    }
-                                >
-                                    <i className="fas fa-trash-alt">Xóa</i>
-                                </button>
-                            </th>
+
                         </tr>
                     ))}
                     </tbody>
                 </table>
             </div>
-            <ModalDeleteContract
-                id={deletedId}
-                name={deletedName}
-                getList={() => {
-                    getContractList();
-                }}
-            />
+
             <Footer/>
+            <ToastContainer/>
         </>)
 }
 

@@ -89,12 +89,11 @@ function CustomerList() {
                                     {/*<i className="fas fa-trash-alt"></i>*/}
                                     Xóa
                                 </button>
-                            </td>
-                            <td>
+
                                 <NavLink
-                                    className="btn btn-primary btn-sm edit"
+
                                     to={'/edit-customer/:id'}>
-                                    <i className="fas fa-edit"></i>
+                                    <button type="button"  className="btn btn-success">Sửa</button>
                                 </NavLink>
                             </td>
                         </tr>
