@@ -43,6 +43,17 @@
       "email": "qodad@mailinator.com",
       "customerTypes": 4,
       "address": "Perspiciatis minus "
+    },
+    {
+      "id": 7,
+      "name": "Rooney Mcclure",
+      "dateOfBirth": "2014-07-29",
+      "gender": "1",
+      "identityNumb": "123123123",
+      "phoneNumb": "423423423",
+      "email": "bema@mailinator.com",
+      "customerTypes": 5,
+      "address": "Quia velit sed lauda"
     }
   ],
   "customerTypes": [
@@ -76,12 +87,15 @@
       "price": "20000",
       "maxPeople": 4,
       "rentType": 1,
-      "facilityTypeId": 1,
-      "standardRoom": "Vip",
-      "otherAmenities": "Karaoke",
+      "facilityTypes": 1,
+      "standardRoom": null,
+      "description": null,
       "poolArea": 6,
       "numberOfFloors": 5,
-      "facilityFree": "???"
+      "facilityFree": "massage",
+      "facilityService": [
+        "4"
+      ]
     },
     {
       "id": 2,
@@ -90,13 +104,16 @@
       "area": "Diện tích phòng: 85.8 m2",
       "price": "20000",
       "maxPeople": 4,
-      "rentalType": "Ngày",
-      "facilityTypeId": 1,
-      "standardRoom": "Vip",
-      "otherAmenities": "Karaoke",
+      "rentType": 1,
+      "facilityTypes": 1,
+      "standardRoom": null,
+      "description": null,
       "poolArea": 6,
       "numberOfFloors": 5,
-      "facilityFree": "???"
+      "facilityFree": "massage",
+      "facilityService": [
+        "4"
+      ]
     },
     {
       "id": 3,
@@ -105,16 +122,60 @@
       "area": "Diện tích phòng: 85.8 m2",
       "price": "20000",
       "maxPeople": 4,
-      "rentalType": "Ngày",
-      "facilityTypeId": 1,
-      "standardRoom": "Vip",
-      "otherAmenities": "Karaoke",
+      "rentType": 1,
+      "facilityTypes": 1,
+      "standardRoom": null,
+      "description": null,
       "poolArea": 6,
       "numberOfFloors": 5,
-      "facilityFree": "???"
+      "facilityFree": "massage",
+      "facilityService": [
+        "4"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "BIỆT THỰ HƯỚNG VƯỜN CÓ HỒ BƠI RIÊNG",
+      "area": "85.8m2",
+      "price": "2000",
+      "rentType": "2",
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Pool_Villas.jpg",
+      "maxPeople": "4",
+      "facilityTypes": 2,
+      "standardRoom": 1,
+      "description": "abc",
+      "poolArea": "30m2",
+      "numberFloors": "2",
+      "facilityFree": null,
+      "facilityService": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "CĂN HỘ ARIYANA",
+      "area": "85.8m2",
+      "price": "2000",
+      "rentType": "2",
+      "img": "https://file4.batdongsan.com.vn/resize/745x510/2019/10/01/20191001164854-ce98_wm.jpg",
+      "maxPeople": "4",
+      "facilityTypes": 2,
+      "standardRoom": 1,
+      "description": "Đầy đủ tiện nghi",
+      "poolArea": null,
+      "numberFloors": "2",
+      "facilityFree": "",
+      "facilityService": [
+        "1",
+        "2",
+        "3"
+      ]
     }
+
   ],
-  "accompanied-service": [
+  "facilityService": [
     {
       "id": 1,
       "name": "massage",
@@ -146,24 +207,6 @@
       "price": "12000"
     }
   ],
-  "facilityTypes": [
-    {
-      "id": 1,
-      "name": "Diamond"
-    },
-    {
-      "id": 2,
-      "name": "Platinium"
-    },
-    {
-      "id": 3,
-      "name": "Gold"
-    },
-    {
-      "id": 4,
-      "name": "Silver"
-    }
-  ],
   "rentType": [
     {
       "id": 1,
@@ -178,6 +221,36 @@
       "name": "Năm"
     }
   ],
+  "standardRoom": [
+    {
+      "id": 1,
+      "name": "Suite"
+    },
+    {
+      "id": 2,
+      "name": "Deluxe"
+    },
+    {
+      "id": 3,
+      "name": "Superior"
+    }
+  ],
+  "facilityTypes": [
+    {
+      "id": 1,
+      "name": "Phòng"
+    },
+    {
+      "id": 2,
+      "name": "Biệt thự"
+    },
+    {
+      "id": 3,
+      "name": "Căn hộ"
+    }
+  ],
+
+
   "contracts": [
     {
       "id": 2,

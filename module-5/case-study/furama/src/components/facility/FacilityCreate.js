@@ -12,8 +12,9 @@ export default function FacilityCreate() {
 
             <Formik initialValues={{
                 id: '', img: '', name: '', area: '', price: '', maxPeople: '',
-                rentalType: '', facilityTypeId: '', standardRoom: '', otherAmenities: '', poolArea: ''
-                , numberOfFloors: '', facilityFree: '', rentType: ''
+                rentType: '', facilityTypes: '', standardRoom: '', description: '',
+                poolArea: ''
+                , numberOfFloors: '', facilityFree: '', facilityService: ''
             }}
                     validationSchema={Yup.object({
                         name: Yup.string().required('Required.'),
@@ -22,7 +23,7 @@ export default function FacilityCreate() {
                         price: Yup.number().required('Required.'),
                         maxPeople: Yup.number().required('Required.'),
                         standardRoom: Yup.string().required('Required.'),
-                        otherAmenities: Yup.string().required('Required.'),
+                        description: Yup.string().required('Required.'),
                         poolArea: Yup.number().required('Required.'),
                         numberOfFloors: Yup.string().required('Required.'),
                         facilityFree: Yup.string().required('Required.'),

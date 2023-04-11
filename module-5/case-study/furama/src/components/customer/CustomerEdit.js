@@ -5,23 +5,32 @@ import * as Yup from 'yup';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {TailSpin} from "react-loader-spinner";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import customerService from "../../service/customer/customerService";
 
 function CustomerEdit() {
     let navigate = useNavigate()
+    const { id } = useParams()
+    const [customerList, setCustomerList] = useState([]);
     const [customerTypeList, setCustomerTypeList] = useState([])
-    useEffect(()=>{
-        const fetchApi = async()=>{
-            const rs = await customerService.getAllCustomerType()
-            setCustomerTypeList(rs)
-        }
-        fetchApi()
-    },[])
 
-    if (!customerTypeList){
-        return null
+
+    useEffect(() => {
+        const fetchApi = async () => {
+
+            const customerData = await customerService.findById(id);
+            setCustomerList(customerData);
+
+            const customerTypesData = await customerService.getAllCustomerType()
+                setCustomerTypeList(customerTypesData)
+        };
+            fetchApi();
+
+    }, [id]);
+
+    if (!customerList){
+        return null;
     }
 
     return (
@@ -29,9 +38,15 @@ function CustomerEdit() {
             <Header/>
             <div id="container">
                 <Formik initialValues={{
-                    id:'',
-                    name: '', dateOfBirth: '', gender: '', identityNumb: '',
-                    phoneNumb: '', email: '', customerTypes: customerTypeList[0]?.name, address: ''
+                    id: customerList.id,
+                    name: customerList.name,
+                    dateOfBirth: customerList.dateOfBirth,
+                    gender: customerList.gender,
+                    identityNumb: customerList.identityNumb,
+                    phoneNumb: customerList.phoneNumb,
+                    email: customerList.email,
+                    customerTypes: customerList.customerTypes,
+                    address: customerList.address
                 }}
                         validationSchema={Yup.object({
                             name: Yup.string().required('Không được bỏ trống'),
@@ -42,24 +57,24 @@ function CustomerEdit() {
                             email: Yup.string().required('Không được bỏ trống').email('Nhập đúng định dạng Email'),
                         })}
                         onSubmit={(values, {setSubmitting}) => {
-                            const create = async () => {
+                            const edit = async () => {
                                 const data = {
                                     ...values,
                                     customerTypes: +values.customerTypes
                                 }
-                                await customerService.save(data)
+                                await customerService.edit(data)
                                 setSubmitting(false)
-                                toast("Thêm Mới Thành Công")
+                                toast("Sửa thông tin khách hàng thành công")
                                 navigate('/customer')
                             }
-                            create()
+                            edit()
                         }
                         }>
                     {({isSubmitting}) => (
                         <Form >
                             <div className="card-header">
                                 <strong id="inDam"><h1 className="card-title"
-                                                       style={{color: 'red', textAlign: "center"}}>Tạo mới hợp đồng</h1>
+                                                       style={{color: 'red', textAlign: "center"}}>Sửa thông tin khách hàng</h1>
                                 </strong>
                             </div>
                             <div className="card container bg-transparent" style={{width:'428px'}}>

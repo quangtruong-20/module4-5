@@ -2,9 +2,29 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import facilityList from "../../data/Facility";
 import {NavLink} from "react-router-dom";
+import {useEffect, useState} from "react";
+import facilityService from "../../service/facility/facilityService";
+import ModalDeleteFacility from "../modal/modalDeleteFacility";
 
 
 function FacilityList() {
+    const [facilitiesList, setFacilitiesList] = useState([])
+
+    const fecthApi = async () => {
+        const rs = await facilityService.findAll()
+        setFacilitiesList(rs)
+    }
+    useEffect(() => {
+        fecthApi()
+    }, [])
+
+    const [idDelete, setIdDelete] = useState(0)
+    const [nameDelete, setNameDelete] = useState('')
+
+    const getIdDelete = (id, name) => {
+        setIdDelete(id)
+        setNameDelete(name)
+    }
     return (
 
         <div>
@@ -48,14 +68,16 @@ function FacilityList() {
                                             data-target="#exampleModal"
                                             style={{marginLeft: '104px', marginRight: '14px'}}
                                         >
-                                            <i className="fas fa-trash-alt"></i>
+                                            {/*<i className="fas fa-trash-alt"></i>*/}
+                                            Xóa
                                         </button>
                                         <NavLink to={'/edit-facility/:id'}>
                                         <button
                                             className="btn btn-primary btn-sm"
 
                                         >
-                                            <i className="fas fa-edit"></i>
+                                            {/*<i className="fas fa-edit"></i>*/}
+                                            Edit
                                         </button>
                                         </NavLink>
                                     </div>
@@ -67,6 +89,13 @@ function FacilityList() {
                 </div>
             </div>
             <Footer/>
+            <ModalDeleteFacility
+                id={idDelete}
+                name={nameDelete}
+                getList={() => {
+                    fecthApi()
+                }}
+            />
         </div>
     )
 }

@@ -92,7 +92,7 @@ function CustomerList() {
 
                                 <NavLink
 
-                                    to={'/edit-customer/:id'}>
+                                    to={`/edit-customer/${customer.id}`}>
                                     <button type="button"  className="btn btn-success">Sửa</button>
                                 </NavLink>
                             </td>

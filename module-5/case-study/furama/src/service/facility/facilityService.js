@@ -53,9 +53,39 @@ export const edit = async (facility) => {
     }
 }
 
-const facilityService = {
-    findAll,getAllFacilityType,edit,delete1,findById,
-    save
+
+export const getFacilitiesTypes = async() =>{
+    try {
+        return (await axios.get('http://localhost:3000/facilityTypes')).data
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const getStandardRoom = async() =>{
+    try {
+        return (await axios.get('http://localhost:3000/standardRoom')).data
+    } catch (error) {
+        console.log(error)
+    }
 }
 
+export const getRentType = async() =>{
+    try {
+        return (await axios.get('http://localhost:3000/rentType')).data
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const getFacilityService = async() =>{
+    try {
+        return (await axios.get('http://localhost:3000/facilityService')).data
+    } catch (error) {
+        console.log(error)
+    }
+}
+const facilityService = {
+    findAll,getAllFacilityType,edit,delete1,findById,getFacilitiesTypes,getStandardRoom,getRentType,getFacilityService,
+    save
+}
 export default facilityService

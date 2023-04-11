@@ -59,7 +59,7 @@ function CustomerCreate() {
                         <Form >
                             <div className="card-header">
                                 <strong id="inDam"><h1 className="card-title"
-                                                       style={{color: 'red', textAlign: "center"}}>Tạo mới hợp đồng</h1>
+                                                       style={{color: 'red', textAlign: "center"}}>Thêm mới khách hàng</h1>
                                 </strong>
                             </div>
                             <div className="card container bg-transparent" style={{width:'428px'}}>
