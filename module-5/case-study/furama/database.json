@@ -48,7 +48,7 @@
       "id": 7,
       "name": "Rooney Mcclure",
       "dateOfBirth": "2014-07-29",
-      "gender": "1",
+      "gender": "2",
       "identityNumb": "123123123",
       "phoneNumb": "423423423",
       "email": "bema@mailinator.com",
@@ -83,24 +83,6 @@
       "id": 1,
       "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-768x497.jpg",
       "name": "PHÒNG SUITE HƯỚNG BIỂN",
-      "area": "Diện tích phòng: 85.8 m2",
-      "price": "20000",
-      "maxPeople": 4,
-      "rentType": 1,
-      "facilityTypes": 1,
-      "standardRoom": null,
-      "description": null,
-      "poolArea": 6,
-      "numberOfFloors": 5,
-      "facilityFree": "massage",
-      "facilityService": [
-        "4"
-      ]
-    },
-    {
-      "id": 2,
-      "img": "https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Pool_Villas-F-768x497.jpg",
-      "name": "PHÒNG DELUXE HƯỚNG BIỂN",
       "area": "Diện tích phòng: 85.8 m2",
       "price": "20000",
       "maxPeople": 4,
@@ -154,7 +136,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": 10,
       "name": "CĂN HỘ ARIYANA",
       "area": "85.8m2",
       "price": "2000",
@@ -172,8 +154,27 @@
         "2",
         "3"
       ]
+    },
+    {
+      "name": "BIỆT THỰ HƯỚNG VƯỜN KHÔNG CÓ HỒ BƠI",
+      "area": "85.8m2",
+      "price": "2000",
+      "rentType": "2",
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Pool_Villas.jpg",
+      "maxPeople": "4",
+      "facilityTypes": 2,
+      "standardRoom": 1,
+      "description": "abc",
+      "poolArea": "30m2",
+      "numberFloors": "2",
+      "facilityFree": null,
+      "facilityService": [
+        "1",
+        "2",
+        "3"
+      ],
+      "id": 11
     }
-
   ],
   "facilityService": [
     {
@@ -249,8 +250,6 @@
       "name": "Căn hộ"
     }
   ],
-
-
   "contracts": [
     {
       "id": 2,

@@ -18,13 +18,15 @@ function FacilityList() {
         fecthApi()
     }, [])
 
-    const [idDelete, setIdDelete] = useState(0)
-    const [nameDelete, setNameDelete] = useState('')
+    const [deleteId, setDeleteId] = useState(0);
+    const [deleteName, setDeleteName] = useState("");
 
-    const getIdDelete = (id, name) => {
-        setIdDelete(id)
-        setNameDelete(name)
-    }
+    const transferInfo = (id, name) => {
+        setDeleteId(id);
+        setDeleteName(name);
+
+    };
+
     return (
 
         <div>
@@ -48,8 +50,8 @@ function FacilityList() {
                         </NavLink>
                     </div>
                     <div className="row">
-                        {facilityList?.map((facility, index) => (
-                            <div className="col-4" key={index}>
+                        {facilitiesList?.map((facility, index) => (
+                            <div className="col-3" key={index}>
                                 <div className="card">
                                     <img
                                         src={facility.img}
@@ -63,9 +65,14 @@ function FacilityList() {
                                         <p className="card-text">{facility.area}</p>
                                         <button
                                             type="button"
-                                            className="btn btn-danger btn-sm"
-                                            data-toggle="modal"
-                                            data-target="#exampleModal"
+                                            className="btn btn-danger"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal"
+                                            onClick={() =>
+                                                transferInfo(
+                                                    facility.id,
+                                                    facility.name
+                                                   )}
                                             style={{marginLeft: '104px', marginRight: '14px'}}
                                         >
                                             {/*<i className="fas fa-trash-alt"></i>*/}
@@ -90,8 +97,8 @@ function FacilityList() {
             </div>
             <Footer/>
             <ModalDeleteFacility
-                id={idDelete}
-                name={nameDelete}
+                id={deleteId}
+                name={deleteName}
                 getList={() => {
                     fecthApi()
                 }}

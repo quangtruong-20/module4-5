@@ -12,7 +12,7 @@ import customerService from "../../service/customer/customerService";
 function CustomerEdit() {
     let navigate = useNavigate()
     const { id } = useParams()
-    const [customerList, setCustomerList] = useState([]);
+    const [customerList, setCustomerList] = useState();
     const [customerTypeList, setCustomerTypeList] = useState([])
 
 
@@ -115,7 +115,7 @@ function CustomerEdit() {
                                                 type="radio"
                                                 name="gender"
                                                 id="inlineRadio2"
-                                                value='0'
+                                                value='2'
                                             />
                                             <label className="form-check-label" htmlFor="inlineRadio2">
                                                 Nữ
@@ -127,7 +127,7 @@ function CustomerEdit() {
                                                 type="radio"
                                                 name="gender"
                                                 id="inlineRadio3"
-                                                value='2'
+                                                value='0'
                                             />
                                             <label className="form-check-label" htmlFor="inlineRadio3">
                                                 LGBT

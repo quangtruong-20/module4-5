@@ -42,11 +42,11 @@ function ContractCreate() {
                 facilities: facilitiesList[0]?.id,
             }}
                     validationSchema={Yup.object({
-                        contractCode: Yup.string().required('Required.'),
-                        startDate: Yup.string().required('Required.'),
-                        endDate: Yup.string().required('Required.'),
-                        deposit: Yup.number().required('Required.'),
-                        totalMoney: Yup.number().required('Required.')
+                        contractCode: Yup.string().required('Không được bỏ trống.'),
+                        startDate: Yup.string().required('Không được bỏ trống.'),
+                        endDate: Yup.string().required('Không được bỏ trống.'),
+                        deposit: Yup.number().required('Không được bỏ trống.'),
+                        totalMoney: Yup.number().required('Không được bỏ trống.')
                     })}
                     onSubmit={(values, {setSubmitting}) => {
                         const create = async () => {

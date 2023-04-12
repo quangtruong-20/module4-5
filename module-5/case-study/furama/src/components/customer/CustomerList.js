@@ -64,7 +64,7 @@ function CustomerList() {
                         <tr key={index}>
                             <th scope="row">{++index}</th>
                             <td>{customer.name}</td>
-                            <td>{parseInt(customer.gender) === 0 ? "nữ" : "nam"}</td>
+                            <td>{customer.gender == 1 ? 'Nam' : customer.gender == 2 ? 'Nữ' : 'LGBT'}</td>
                             <td>{customer.dateOfBirth}</td>
                             <td>{customer.identityNumb}</td>
                             <td>{customer.phoneNumb}</td>
