@@ -24,7 +24,7 @@ export default function BookEdit() {
         };
 
         fetchData();
-    }, [id]);
+    }, []);
 
     const handleUpdate = async (values) => {
         try {

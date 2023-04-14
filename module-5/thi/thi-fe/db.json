@@ -1,0 +1,141 @@
+{
+  "books": [
+    {
+      "id": "BO-1111",
+      "name": "4 con vịt",
+      "typeId": 2,
+      "date": "22/01/2022",
+      "amount": 12
+    },
+    {
+      "id": "BO-2211",
+      "name": "1 con vịt",
+      "typeId": 1,
+      "date": "22/01/2022",
+      "amount": 12
+    },
+    {
+      "id": "BO-2211",
+      "name": "2 con vịt",
+      "typeId": 3,
+      "date": "22/01/2022",
+      "amount": 12
+    },
+    {
+      "id": "BO-3333",
+      "name": "Xander Le",
+      "date": "2013-11-12",
+      "typeId": 2,
+      "amount": 38
+    },
+    {
+      "id": "BO-1231",
+      "name": "Amelia Hewitt",
+      "date": "1988-10-04",
+      "typeId": 1,
+      "amount": 64
+    },
+    {
+      "id": "1231231",
+      "name": "Bernard Reid",
+      "date": "2003-06-03",
+      "typeId": 1,
+      "amount": 20
+    },
+    {
+      "id": "BO-1222",
+      "name": "Hu Holden",
+      "date": "1987-03-15",
+      "typeId": 1,
+      "amount": 25
+    },
+    {
+      "id": "BO-9876",
+      "name": "Farrah Horn",
+      "date": "1994-06-28",
+      "typeId": 2,
+      "amount": 20
+    },
+    {
+      "id": "BO-7564",
+      "name": "Emerson Cooper",
+      "date": "2021-12-15",
+      "typeId": 1,
+      "amount": 100
+    },
+    {
+      "id": "BO-4673",
+      "name": "Chiến tranh và hòa bình",
+      "date": "2023-04-09",
+      "typeId": 1,
+      "amount": 13
+    },
+    {
+      "id": "BO-7582",
+      "name": "Xenos Clements",
+      "date": "1971-02-13",
+      "typeId": 2,
+      "amount": 52
+    },
+    {
+      "id": "BO-5324",
+      "name": "Cameron Cooper",
+      "date": "2015-02-09",
+      "typeId": 1,
+      "amount": 80
+    },
+    {
+      "id": "Reprehenderit enim r",
+      "name": "Travis Blanchard",
+      "date": "2016-03-04",
+      "typeId": 3,
+      "amount": 97
+    },
+    {
+      "id": "Aliquam maiores reic",
+      "name": "Yvonne Garrett",
+      "date": "1980-11-06",
+      "typeId": 1,
+      "amount": 46
+    },
+    {
+      "id": "Anim ut amet vel et",
+      "name": "Riley Whitfield",
+      "date": "2008-10-19",
+      "typeId": 3,
+      "amount": 48
+    },
+    {
+      "id": "BO-7262",
+      "name": "Eric Mclean",
+      "date": "1989-06-18",
+      "typeId": 4,
+      "amount": 6
+    },
+    {
+      "id": "BO-7336",
+      "name": "ádfsadfasdfas",
+      "date": "2023-04-04",
+      "typeId": 4,
+      "amount": 12
+    }
+  ],
+  "bookTypes": [
+    {
+      "id": 1,
+      "name": "thiếu nhi"
+    },
+    {
+      "id": 2,
+      "name": "tho"
+    },
+    {
+      "id": 3,
+      "name": "trinh thám"
+    },
+    {
+      "id": 4,
+      "name": "trinh thám123"
+    }
+  ]
+}

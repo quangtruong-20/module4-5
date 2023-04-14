@@ -1,6 +1,5 @@
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import "bootstrap/dist/css/bootstrap.css"
 
 
 function Home() {

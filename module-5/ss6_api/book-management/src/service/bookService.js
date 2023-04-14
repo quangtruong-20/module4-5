@@ -1,9 +1,9 @@
 import axios from "axios";
 
 
-export const findAll = async () => {
+export const findAll = async (name = '') => {
     try{
-        const result = await  axios.get('http://localhost:3000/books');
+        const result = await  axios.get(`http://localhost:3000/books?name_like=${name}`);
         return result.data;
     }catch (err){
         console.log(err);
