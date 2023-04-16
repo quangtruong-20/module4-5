@@ -1,12 +1,13 @@
 import {useEffect, useState} from "react";
-import {findAll, findAllType} from "../service/bookService";
-import {NavLink} from "react-router-dom";
+import {findAll, findAllType, remove} from "../service/bookService";
+import {Link, NavLink} from "react-router-dom";
 import {Field, Form, Formik} from "formik";
 import Header from "./Header";
 import Footer from "./Footer";
-import {ToastContainer} from "react-toastify";
+import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import ReactPaginate from "react-paginate";
+import ModalDelete from "./ModalDelete";
 
 export default function BookList() {
     const [book, setBook] = useState([]);
@@ -20,24 +21,40 @@ export default function BookList() {
     const handlePageClick = (event) => {
         setFilters((prev) => ({ ...prev, page: event.selected }));
     };
+    const [deletedObject, setDeletedObject] = useState({
+        deletedId: "",
+        deletedName: "",
+    });
 
+    const handleTransferInfo = (deletedObject) => {
+        setDeletedObject((prev) => ({ ...prev, ...deletedObject }));
+    };
+    const handleDelete = async () => {
+        try {
+            await remove(deletedObject.deletedId);
+            const newFilters = {...filters}
+            setFilters(newFilters)
+            toast("Xóa thành công");
+        } catch (error) {
+            console.warn(error);
+            toast("Xóa thất bại");
+        }
+    };
 
     useEffect(() => {
             const listBooks = async () => {
-                const rs = await findAll();
-                console.log(rs.data)
+                const rs = await findAll(filters);
                 setBook(rs.data.content);
                 setPageCount(rs.data.totalPages);
             }
             const listBookType = async () => {
                 const rs = await findAllType();
-                console.log(rs.data);
                 setBookType(rs.data);
             }
             listBooks();
             listBookType();
         },
-        [])
+        [filters])
 
     return (
         <>
@@ -45,12 +62,11 @@ export default function BookList() {
             <div className="p-3">
                 <h2 className="text-center fw-bold my-3">DANH SÁCH BOOKS</h2>
                 <Formik initialValues={{name: ''}}
-                        onSubmit={
-                            async (values) => {
-                                const res = await findAll(values.name);
-                                setBook(res.data.content);
-                            }
-                        }>
+                        onSubmit={(values) => {
+                            setFilters((prev) => {
+                                return { ...prev, ...values, page: 0 };
+                            });
+                        }}>
                     <Form className="d-flex" role="search">
                         <Field name={'name'} placeholder={'Search...'} className="form-control me-2" type="search"
                                aria-label="Search"/>
@@ -73,11 +89,12 @@ export default function BookList() {
                         <th>Ngày nhập sách</th>
                         <th>Số lượng</th>
                         <th>Thể loại</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
                     {
-                        Object.values(currentItems).map((value, index) => (
+                        Object.values(book).map((value, index) => (
                             <tr key={index}>
                                 <th>{value.id}</th>
                                 <td>{value.name}</td>
@@ -88,12 +105,35 @@ export default function BookList() {
                                      bookType.filter((bt) => bt.id === value.bookType.id)[0]?.name
                                     }
                                 </td>
+                                <td>
+                                    <Link to={`/edit/${value.id}`} className="btn btn-primary me-3" >
+                                        Sửa
+                                    </Link>
+                                    <button
+                                    type="button"
+                                    className="btn btn-danger"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal"
+                                    onClick={() =>
+                                        handleTransferInfo({
+                                            deletedId: value.id,
+                                            deletedName: value.name,
+                                        })
+                                    }
+                                >
+                                    Delete
+                                </button></td>
                             </tr>
                         ))
                     }
                     </tbody>
                 </table>
             </div>
+            <ModalDelete
+                deletedId={deletedObject.deletedId}
+                deletedName={deletedObject.deletedName}
+                onCompletedDelete={handleDelete}
+            />
             <ReactPaginate
                 breakLabel="..."
                 nextLabel=">"
