@@ -16,17 +16,19 @@ public class PayPalController {
 
     private final String  BASE = "https://api-m.sandbox.paypal.com";
     private final static Logger LOGGER =  Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-
+// Tạo một phương thức getAuth() để mã hóa thông tin đăng nhập bằng cách sử dụng mã Base64.
     private String getAuth(String client_id, String app_secret) {
         String auth = client_id + ":" + app_secret;
         return Base64.getEncoder().encodeToString(auth.getBytes());
     }
-
+// Tạo một phương thức generateAccessToken() để tạo access token từ PayPal API.
     public String generateAccessToken() {
         String auth = this.getAuth(
                 "Ab3MKHmxUgGSiGS5JJxFVRSwoZW_nWB7FF2YHYENZrZF3MtZ3ty5g19GufoCZjxaJMdQ3KxG-aY5PSdc",
                 "EIYl4O9hIvbG_I-4qgUXmtlRlY4EXAwtBMX0_65pucNxHMhB5Duvwupk23ro_MdANlqCdPzd-WD2gkP8"
         );
+
+        // Sử dụng RestTemplate để tạo request tới PayPal API và nhận phản hồi.
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders headers = new HttpHeaders();
@@ -42,7 +44,8 @@ public class PayPalController {
                 request,
                 String.class
         );
-
+// Nếu phản hồi thành công, trả về access token được lấy từ JSON response.
+// Nếu không thành công, ghi lại lỗi và trả về một thông báo lỗi.
         if (response.getStatusCode() == HttpStatus.OK) {
             LOGGER.log(Level.INFO, "GET TOKEN: SUCCESSFUL!");
             return new JSONObject(response.getBody()).getString("access_token");
@@ -51,7 +54,7 @@ public class PayPalController {
             return "Unavailable to get ACCESS TOKEN, STATUS CODE " + response.getStatusCode();
         }
     }
-
+// Phương thức capturePayment() được gọi trên phương thức callback onApprove() từ nút PayPal sau khi một đơn hàng đã được hoàn thành.
     @RequestMapping(value="/api/orders/{orderId}/capture", method = RequestMethod.POST)
     @CrossOrigin
     public Object capturePayment(@PathVariable("orderId") String orderId) {
@@ -81,7 +84,7 @@ public class PayPalController {
             return "Unavailable to get CREATE AN ORDER, STATUS CODE " + response.getStatusCode();
         }
     }
-
+//Phương thức createOrder() được gọi trên phương thức callback createOrder() từ nút PayPal để tạo một đơn hàng.
     @RequestMapping(value="/api/orders", method = RequestMethod.POST)
     @CrossOrigin
     public Object createOrder() {

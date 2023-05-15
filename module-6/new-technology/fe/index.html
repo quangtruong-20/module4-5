@@ -12,7 +12,9 @@
 <div id="paypal-button-container"></div>
 <script>
   paypal.Buttons({
+
     // Sets up the transaction when a PayPal payment button is clicked
+    // Phương thức callback createOrder() cho phép bạn tạo yêu cầu đặt hàng của bạn
     createOrder: (data, actions) => {
       return fetch("http://localhost:8080/api/orders", {
         method: "post",
@@ -23,6 +25,8 @@
               .then(order => order.id);
     },
     // Finalize the transaction after payer approval
+    // Phương thức callback onApprove() cho phép bạn thực hiện một số hành
+    // động với chi tiết đơn hàng sau khi đơn hàng đã được tạo.
     onApprove: (data, actions) => {
       return fetch(`http://localhost:8080/api/orders/${data.orderID}/capture`, {
         method: "post",
