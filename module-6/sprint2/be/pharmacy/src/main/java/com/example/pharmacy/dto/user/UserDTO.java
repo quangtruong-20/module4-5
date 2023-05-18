@@ -1,6 +1,8 @@
 package com.example.pharmacy.dto.user;
 
-import com.example.api.entity.user.Role;
+
+
+import com.example.pharmacy.entity.user.Role;
 
 import java.util.Set;
 

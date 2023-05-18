@@ -1,8 +1,9 @@
 package com.example.pharmacy.service.user.impl;
 
-import com.example.api.entity.user.User;
-import com.example.api.repository.user.IUserRepository;
-import com.example.api.service.user.IUserService;
+
+import com.example.pharmacy.entity.user.User;
+import com.example.pharmacy.repository.user.IUserRepository;
+import com.example.pharmacy.service.user.IUserService;
 import org.hibernate.validator.internal.util.stereotypes.Lazy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;

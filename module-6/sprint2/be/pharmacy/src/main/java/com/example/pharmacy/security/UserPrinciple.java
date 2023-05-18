@@ -1,6 +1,7 @@
 package com.example.pharmacy.security;
 
-import com.example.api.entity.user.User;
+
+import com.example.pharmacy.entity.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

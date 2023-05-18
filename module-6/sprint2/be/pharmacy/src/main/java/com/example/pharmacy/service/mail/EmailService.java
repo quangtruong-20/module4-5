@@ -1,7 +1,8 @@
 package com.example.pharmacy.service.mail;
 
-import com.example.api.entity.user.User;
-import com.example.api.service.user.IUserService;
+
+import com.example.pharmacy.entity.user.User;
+import com.example.pharmacy.service.user.IUserService;
 import com.warrenstrange.googleauth.GoogleAuthenticator;
 import com.warrenstrange.googleauth.GoogleAuthenticatorConfig;
 import com.warrenstrange.googleauth.GoogleAuthenticatorKey;

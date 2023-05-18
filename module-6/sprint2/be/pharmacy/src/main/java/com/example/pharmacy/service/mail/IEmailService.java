@@ -1,6 +1,7 @@
 package com.example.pharmacy.service.mail;
 
-import com.example.api.entity.user.User;
+
+import com.example.pharmacy.entity.user.User;
 
 public interface IEmailService {
     void sendResetPasswordEmail(String email, String otp);

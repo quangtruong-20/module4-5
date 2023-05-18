@@ -1,6 +1,8 @@
 package com.example.pharmacy.dto.user;
 
-import com.example.api.entity.user.RoleName;
+
+
+import com.example.pharmacy.entity.user.RoleName;
 
 import java.util.HashSet;
 import java.util.Set;

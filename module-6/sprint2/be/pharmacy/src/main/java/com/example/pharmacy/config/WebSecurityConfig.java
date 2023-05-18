@@ -1,8 +1,9 @@
 package com.example.pharmacy.config;
 
-import com.example.api.security.CustomUserDetailsService;
-import com.example.api.security.JwtAuthenticationEntryPoint;
-import com.example.api.security.JwtAuthenticationFilter;
+
+import com.example.pharmacy.security.CustomUserDetailsService;
+import com.example.pharmacy.security.JwtAuthenticationEntryPoint;
+import com.example.pharmacy.security.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,8 @@
 package com.example.pharmacy.service.user;
 
-import com.example.api.entity.user.User;
+
+
+import com.example.pharmacy.entity.user.User;
 
 import java.util.List;
 import java.util.Optional;
