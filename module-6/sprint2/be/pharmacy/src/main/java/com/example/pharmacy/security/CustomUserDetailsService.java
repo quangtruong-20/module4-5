@@ -1,5 +1,6 @@
 package com.example.pharmacy.security;
 
+import com.example.pharmacy.entity.user.User;
 import com.example.pharmacy.repository.user.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
